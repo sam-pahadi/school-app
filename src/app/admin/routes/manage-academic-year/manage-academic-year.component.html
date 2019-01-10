@@ -1,0 +1,82 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Manage Academic Year</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>Manage Academic Year</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section class="mt-2 pageHeader_right sectionPadding">
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <div class="example-container mat-elevation-z8">
+          <div class="responsive_table">
+            <mat-table class="" #table [dataSource]="dataSource" matSort  matSortDisableClear="true" matSortDirection="asc">
+
+              <!-- board Column -->
+              <ng-container matColumnDef="board">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Board </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div class="dangerColor">{{element.board}}</div>
+                </mat-cell>
+              </ng-container>
+
+              <!-- academicYear Column -->
+              <ng-container matColumnDef="academicYear">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Academic Year </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div>{{element.academicYear}}</div>
+                </mat-cell>
+              </ng-container>
+
+              <!--&lt;!&ndash; startDate Column &ndash;&gt;-->
+              <!--<ng-container matColumnDef="startDate">-->
+                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Start Date </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element">-->
+                  <!--<div>{{element.startDate}}</div>-->
+                <!--</mat-cell>-->
+              <!--</ng-container>-->
+
+              <!--&lt;!&ndash; endDate Column &ndash;&gt;-->
+              <!--<ng-container matColumnDef="endDate">-->
+                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> End Date</mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element">-->
+                  <!--<div>{{element.endDate}}</div>-->
+                <!--</mat-cell>-->
+              <!--</ng-container>-->
+
+              <!-- status Column -->
+              <ng-container matColumnDef="status">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div>{{element.status}}</div>
+                </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="schoolName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> School Name </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div>{{element.schoolName}}</div>
+                </mat-cell>
+              </ng-container>
+
+             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+          </div>
+
+          <!--<div class="row  clearfix">-->
+            <!--<div class="col-lg-12 no-padding">-->
+              <!--<mat-paginator [length]="100"-->
+                             <!--[pageSize]="5"-->
+                             <!--[pageSizeOptions]="[5, 10, 25, 100]">-->
+              <!--</mat-paginator>-->
+            <!--</div>-->
+          <!--</div>-->
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

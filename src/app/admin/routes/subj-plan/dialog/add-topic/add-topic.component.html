@@ -1,0 +1,42 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"><strong>Add Topic</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <form [formGroup]="addTopic" novalidate>
+    <div class="row">
+      <div class="col-lg-6 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Topic Name" formControlName="topicName"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Note" formControlName="note"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="mat-dialog-actions">
+  <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+  <!--<span class="spacer"></span>-->
+  <button mat-raised-button class="dangerThemeBtn">Submit</button>
+</mat-dialog-actions>
+
+
+

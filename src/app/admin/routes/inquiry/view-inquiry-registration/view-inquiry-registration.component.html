@@ -1,0 +1,256 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Inquiry Manager</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>Online Inquiry for Utsav School</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <form [formGroup]="viewInquiry" (ngSubmit)="onSubmit(viewInquiry.value)">
+    <section>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-header class="matCardHeader">
+          Let me introduce myself
+        </mat-card-header>
+        <mat-card-content class="matCardContent">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="My Name (Master/Baby)" autocomplete="off"
+                         formControlName="name"
+                         autocomplete="off" required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="class" autocomplete="off"
+                         formControlName="class"
+                         autocomplete="off" required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+
+                <label style="width: 100%;">Gender</label>
+                <mat-radio-group formControlName="gender">
+                  <mat-radio-button value="M" class="mr-1">Male</mat-radio-button>
+                  <mat-radio-button value="F">Female</mat-radio-button>
+                </mat-radio-group>
+
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Contact Number" autocomplete="off"
+                         formControlName="contact_number"
+                         autocomplete="off"/>
+                </mat-form-field>
+
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Home Address" autocomplete="off"
+                         formControlName="address"
+                         autocomplete="off"/>
+                </mat-form-field>
+
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="I am alergic to" autocomplete="off"-->
+                         <!--formControlName="alergic"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="Newspapers we get at home" autocomplete="off"-->
+                         <!--formControlName="newspaper"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Father's Name" autocomplete="off"
+                         formControlName="fathersName"
+                         autocomplete="off" required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Mother's Name" autocomplete="off"
+                         formControlName="mothersName"
+                         autocomplete="off"/>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Mother's Occupation" autocomplete="off"
+                         formControlName="mothersOcupation"
+                         autocomplete="off"/>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="email" matInput
+                         placeholder="Email ID" autocomplete="off"
+                         formControlName="email_id"
+                         autocomplete="off"/>
+                </mat-form-field>
+
+                <mat-form-field>
+                  <mat-select placeholder="Blood Group" formControlName="blood_group">
+                    <mat-option *ngFor="let blood of bloodGroup" [value]="blood.key">
+                      {{ blood.value }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="TV Channel we watch" autocomplete="off"-->
+                         <!--formControlName="tvChannel"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="Last Name" autocomplete="off"-->
+                         <!--formControlName="lastName"-->
+                         <!--autocomplete="off" required/>-->
+                  <!--<mat-error>Required Field</mat-error>-->
+                <!--</mat-form-field>-->
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Father's Occupation" autocomplete="off"
+                         formControlName="fathersOcupation"
+                         autocomplete="off"/>
+                </mat-form-field>
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="Mother's Mobile No." autocomplete="off"-->
+                         <!--formControlName="motherMobNum"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="I speak language" autocomplete="off"-->
+                         <!--formControlName="language"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="Emergency Contact name" autocomplete="off"-->
+                         <!--formControlName="emergencyContact"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+
+                <label style="width: 100%;">I would like to come to school</label>
+                <mat-radio-group formControlName="tavel_by">
+                  <mat-radio-button value="1" class="mr-1">Bus</mat-radio-button>
+                  <mat-radio-button value="2">Myself</mat-radio-button>
+                </mat-radio-group>
+
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field class="example-full-width">
+                  <input matInput [matDatepicker]="pickerDob" placeholder="My D.O.B"
+                         formControlName="dob" required/>
+                  <mat-error>Required Field</mat-error>
+                  <mat-datepicker-toggle matSuffix [for]="pickerDob"></mat-datepicker-toggle>
+                  <mat-datepicker #pickerDob></mat-datepicker>
+                </mat-form-field>
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="Father's Mobile No." autocomplete="off"-->
+                         <!--formControlName="fatherMobNum"-->
+                         <!--autocomplete="off" required/>-->
+                  <!--<mat-error>Required Field</mat-error>-->
+                <!--</mat-form-field>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="Mother's Office Phone" autocomplete="off"-->
+                         <!--formControlName="motherOfficePhone"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="My special talent" autocomplete="off"-->
+                         <!--formControlName="talent"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput-->
+                         <!--placeholder="Emergency Contact No." autocomplete="off"-->
+                         <!--formControlName="emergencyContactNum"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+
+                <label style="width: 100%;">I am</label>
+                <mat-radio-group formControlName="food_choice">
+                  <mat-radio-button value="1" class="mr-1">Vegetarian</mat-radio-button>
+                  <mat-radio-button value="2">Non-vegetarian</mat-radio-button>
+                </mat-radio-group>
+
+              </div>
+            </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-header class="matCardHeader">
+          My parent came to know of this pre-school through
+        </mat-card-header>
+        <mat-card-content class="matCardContent">
+          <form>
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <div>
+                  <mat-checkbox>Newspaper ad</mat-checkbox>
+                </div>
+                <div>
+                  <mat-checkbox>Friends</mat-checkbox>
+                </div>
+                <div>
+                  <mat-checkbox>Pamphlet</mat-checkbox>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <div>
+                  <mat-checkbox>TV ad</mat-checkbox>
+                </div>
+                <div>
+                  <mat-checkbox>Kiosk</mat-checkbox>
+                </div>
+                <div>
+                  <mat-checkbox>Poster</mat-checkbox>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <div>
+                  <mat-checkbox>Magazine ad</mat-checkbox>
+                </div>
+                <div>
+                  <mat-checkbox>Banner</mat-checkbox>
+                </div>
+                <div>
+                  <mat-checkbox>Auto backs</mat-checkbox>
+                </div>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <div>
+                  <mat-checkbox>Bus Advertisement</mat-checkbox>
+                </div>
+                <div>
+                  <mat-checkbox>Hoarding</mat-checkbox>
+                </div>
+                <div>
+                  <mat-checkbox>Internet</mat-checkbox>
+                </div>
+              </div>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </section>
+    <input type="hidden" formControlName="school_id" value="" [(ngModel)]="school_id" />
+    <button mat-raised-button class="dangerThemeBtn" [disabled]="viewInquiry.status == 'INVALID'">Submit</button>
+<br><br/>
+  </form>
+</div>

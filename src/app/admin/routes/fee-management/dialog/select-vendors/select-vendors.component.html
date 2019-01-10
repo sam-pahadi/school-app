@@ -1,0 +1,22 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"> <strong>Mayank</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <mat-selection-list>
+    <mat-list-option *ngFor="let vendor of vendors">
+      {{vendor}}
+    </mat-list-option>
+  </mat-selection-list>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end" class="mat-dialog-actions">
+  <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+  <!--<span class="spacer"></span>-->
+  <button mat-raised-button class="dangerThemeBtn">Submit</button>
+</mat-dialog-actions>
+
+
+

@@ -1,0 +1,14 @@
+.mat-table .mat-cell{
+  white-space: normal;
+  text-overflow: initial;
+  word-break: break-word; word-break: break-all;word-break: break-all;
+}
+.mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1)
+{
+  flex: 0 0 7.5%;
+  text-align: center;
+}
+table {
+  width: 100%;
+}

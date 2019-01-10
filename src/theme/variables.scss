@@ -1,0 +1,56 @@
+
+/*==color theme variables==*/
+$dangerTheme: #333;
+$themeColor: #ff7a00;
+$dangerBorder: #000;
+$white: #ffffff;
+$defaultBorder: #e5e5e5;
+$LightBorder: #efefef;
+$bar: #efefef;
+$txtLight: #868686;
+$placeholder: #bbbbbb;
+$smallestFont: 10px;
+$errorColor: #EF3B3A;
+$successColor: #28a745;
+$assetPath : "/assets/images";
+/*--font family --*/
+$fontRegular: 'SourceSansProRegular';
+$fontBold: 'SourceSansProBold';
+
+/*--styling based on variables--*/
+[warn]{
+  background-color: $dangerTheme !important;
+  color: #fff;
+}
+[noBg]{
+  background-color: transparent;
+}
+[barBg]{
+  background-color: $bar;
+}
+[barShadow]{
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+}
+[btnShadow]{
+  box-shadow: 0 1px 5px #ccc;
+}
+[smallestFont]{
+  font-size: $smallestFont;
+}
+[outLinePrimary]{
+  border:1px solid $dangerBorder !important;
+}
+[outLineDefault]{
+  border:1px solid $defaultBorder !important;
+}
+[danger]{
+  background-color: $dangerTheme;
+}
+[dangerText]{
+  color: $dangerTheme !important;
+}
+.mat-toolbar.mat-accent, .mat-toolbar.mat-primary {
+  background: $dangerTheme;
+  color: #fff;
+}
+

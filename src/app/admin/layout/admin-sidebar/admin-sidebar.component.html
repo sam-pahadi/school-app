@@ -1,0 +1,426 @@
+<mat-toolbar class="sidebarHeader" noBorder>
+  <a routerLink="/dashboard" class="logo_A">
+    <img src="assets/images/icons/logo.png" alt="MEDTRAK">
+  </a>
+</mat-toolbar>
+
+<div class="pagePlaceHolder">
+  <mat-accordion class="matSidebarMenu">
+    <mat-nav-list>
+      <a mat-list-item="" [routerLink]="['/dashboard']" [routerLinkActive]="['menuActive']"
+         [routerLinkActiveOptions]="{exact: true}">
+        <i class="fas fa-tachometer-alt width22"></i>
+        Dashboard</a>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <a mat-list-item="" [routerLink]="['/view-teachers-registration']" [routerLinkActive]="['menuActive']"
+         [routerLinkActiveOptions]="{exact: true}">
+        <i class="far fa-user width22"></i>
+        Teacher Registration</a>
+    </mat-nav-list>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-home width22"></i> Home
+      </mat-expansion-panel-header>
+      <mat-accordion>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/home/manage-academic-year']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Manage Academic Year</a>
+          </mat-nav-list>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/home/module-completion-status']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Module Completion Status</a>
+          </mat-nav-list>
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-nav-list>
+      <a mat-list-item="" [routerLink]="['/inquiry/inquiry-manager']" [routerLinkActive]="['menuActive']"
+         [routerLinkActiveOptions]="{exact: true}">
+        <i class="fa fa-graduation-cap width22"></i>
+        Inquiry Manager
+        <span class="badge badge-dark">1</span>
+      </a>
+    </mat-nav-list>
+
+    <mat-nav-list>
+      <a mat-list-item="" [routerLink]="['/new-admission']" [routerLinkActive]="['menuActive']"
+         [routerLinkActiveOptions]="{exact: true}">
+        <i class="fas fa-money-bill-alt width22"></i>
+        New Admission
+        <span class="badge badge-dark">1</span>
+      </a>
+    </mat-nav-list>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-edit width22"></i> Class Management
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-expansion-panel class="subMenuParent">
+          <mat-expansion-panel-header class="childIcon subMenuChild1">
+            <i class="far fa-circle width22"></i> House
+          </mat-expansion-panel-header>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/house/view-house']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> House</a>
+          </mat-nav-list>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/house/allocate-house']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Allocate House</a>
+          </mat-nav-list>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/house/house-report']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> House Report</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+
+        <mat-nav-list class="subMenuParent">
+          <a class="childIcon listsubMenuChild1" mat-list-item="" [routerLink]="['/manage-division']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i>
+            Change Division</a>
+        </mat-nav-list>
+
+        <mat-nav-list class="subMenuParent">
+          <a class="childIcon listsubMenuChild1" mat-list-item="" [routerLink]="['/generate-roll-number']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i>
+            Generate Roll No.</a>
+        </mat-nav-list>
+
+        <mat-nav-list class="subMenuParent">
+          <a class="childIcon listsubMenuChild1" mat-list-item="" [routerLink]="['/student-attendance']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i>
+            Student Attendance</a>
+        </mat-nav-list>
+
+        <mat-nav-list class="subMenuParent">
+          <a class="childIcon listsubMenuChild1" mat-list-item="" [routerLink]="['/attendance-report']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i>
+             Attendance Report</a>
+        </mat-nav-list>
+
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="far fa-comments width22"></i> Communication
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/communication/daily-diary']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Daily Diary</a>
+        </mat-nav-list>
+
+        <mat-expansion-panel class="subMenuParent">
+          <mat-expansion-panel-header class="childIcon subMenuChild1">
+            <i class="far fa-circle width22"></i> Media
+          </mat-expansion-panel-header>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/communication/media/upload-share']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Gallery</a>
+          </mat-nav-list>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/communication/media/upload-share']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Upload & Share</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-nav-list>
+      <a mat-list-item="" [routerLink]="['/subjectPlan']" [routerLinkActive]="['menuActive']"
+         [routerLinkActiveOptions]="{exact: true}">
+        <i class="fas fa-book width22"></i>
+        Subject Plan</a>
+    </mat-nav-list>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-file width22"></i> Class Test
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/upload-marks']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Upload Marks</a>
+        </mat-nav-list>
+        </mat-accordion>
+      </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-money-bill-alt width22"></i> Transportation
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/transportation/manage-driver']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Manage Driver</a>
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/transportation/manage-bus-point']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Manage Bus Point</a>
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/transportation/manage-bus-route']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Manage Bus Route</a>
+        </mat-nav-list>
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-cogs width22"></i> Settings
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/view-udise-number']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Set UDISE</a>
+        </mat-nav-list>
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-money-bill-alt width22"></i> GTrac
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/school-report']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> School Report</a>
+        </mat-nav-list>
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-cog width22"></i> Role Management
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/role-management/new-role']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> New Role</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/role-management/assign-role']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Assign Role</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/role-management/parent-app-feature']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Parent App Feature</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/role-management/teacher-app-feature']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Teacher App Feature</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/role-management/user-setting']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> User Setting</a>
+        </mat-nav-list>
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-book width22"></i> Report Card
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/report-card/term']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Term</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/report-card/subject-order']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Subject Order</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/report-card/add-exam']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Add Exam Type</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/report-card/upload-exam-marks']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Upload Marks</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/report-card/download']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Download</a>
+        </mat-nav-list>
+      </mat-accordion>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-user width22"></i> Administration
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/administration/edit-student-info']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Edit Student Info</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/administration/teacher-attendance']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Teacher Attendance</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/administration/device-registration']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Device Registration</a>
+        </mat-nav-list>
+
+        <mat-expansion-panel class="subMenuParent">
+          <mat-expansion-panel-header class="childIcon subMenuChild1">
+            <i class="far fa-circle width22"></i> Edit App Profile
+          </mat-expansion-panel-header>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/administration/profile-edit']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Profile Type</a>
+          </mat-nav-list>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/administration/approve-profile-update']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Approve Update</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+
+        </mat-accordion>
+      </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <i class="fas fa-money-bill-alt width22"></i> Fee Management
+      </mat-expansion-panel-header>
+      <mat-accordion>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/billing-information']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Billing Information</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/fee-head']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Fee Head</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/class-fee-heads-nature']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Class Fee Heads Nature</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/fee-structure']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Fee Structure</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/class-fee-head']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Class Fee Head</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/late-fee-setting']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Late Fee Head</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/get_reconsiltaion_details']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Bank Reconciliation</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/previous-year-fees']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Previous Year Fees</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/fee-scheme']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Fee Scheme</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/assign-fee-structure']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Assign Fee Structures</a>
+        </mat-nav-list>
+        <mat-nav-list class="subMenuParent">
+          <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/assign-fee-scheme']"
+             [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+            <i class="far fa-circle width22"></i> Assign Fee Scheme</a>
+        </mat-nav-list>
+
+
+        <mat-expansion-panel class="subMenuParent">
+          <mat-expansion-panel-header class="childIcon subMenuChild1">
+            <i class="far fa-circle width22"></i> Fee Report
+          </mat-expansion-panel-header>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/due-report']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Due Report</a>
+          </mat-nav-list>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/assign-fee-collection-report']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Fee Collection Report</a>
+          </mat-nav-list>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/headwise-fee-report']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Head Wise Fee Report</a>
+          </mat-nav-list>
+          <mat-nav-list class="subMenuParent">
+            <a mat-list-item class="childIcon subMenuChild2" [routerLink]="['/fee-management/receipt-cancellation-report']"
+               [routerLinkActive]="['menuActive']" [routerLinkActiveOptions]="{exact: true}">
+              <i class="far fa-circle width22"></i> Receipt Cancellation Report
+            </a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+
+
+        </mat-accordion>
+</mat-expansion-panel>
+
+
+    <!--<mat-nav-list>-->
+      <!--<a mat-list-item="" [routerLink]="['/dashboard/patient/patient-list']" [routerLinkActive]="['menuActive']"-->
+         <!--[routerLinkActiveOptions]="{exact: true}">-->
+        <!--<img src="assets/images/sidebar/patient.svg" alt="img" class="width22">-->
+        <!--tab</a>-->
+    <!--</mat-nav-list>-->
+    <!--<mat-nav-list>-->
+      <!--<a mat-list-item="" [routerLink]="['/dashboard/pharmacy/pharmacy-list']" [routerLinkActive]="['menuActive']"-->
+         <!--[routerLinkActiveOptions]="{exact: true}">-->
+        <!--<img src="assets/images/sidebar/pharmacy_sidebar.svg" alt="img" class="width22">-->
+        <!--tab</a>-->
+    <!--</mat-nav-list>-->
+
+
+  </mat-accordion>
+</div>

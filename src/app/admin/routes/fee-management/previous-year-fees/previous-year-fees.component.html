@@ -1,0 +1,98 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Previous Year Fees</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <table mat-table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                       matSortDirection="asc">
+
+                  <!-- Checkbox Column -->
+                  <ng-container matColumnDef="select">
+                    <th mat-header-cell *matHeaderCellDef>
+                      <mat-checkbox (change)="$event ? masterToggle() : null"
+                                    [checked]="selection.hasValue() && isAllSelected()"
+                                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+                      </mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let row">
+                      <mat-checkbox (click)="$event.stopPropagation()"
+                                    (change)="$event ? selection.toggle(row) : null"
+                                    [checked]="selection.isSelected(row)">
+                      </mat-checkbox>
+                    </td>
+                  </ng-container>
+                  <!-- rollNum Column -->
+                  <ng-container matColumnDef="rollNum">
+                    <th mat-header-cell *matHeaderCellDef> Roll No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.rollNum}} </td>
+                  </ng-container>
+
+                  <!-- grNum Column -->
+                  <ng-container matColumnDef="grNum">
+                    <th mat-header-cell *matHeaderCellDef> GR No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.grNum}} </td>
+                  </ng-container>
+
+                  <!-- name Column -->
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  </ng-container>
+
+                  <!-- middleName Column -->
+                  <ng-container matColumnDef="middleName">
+                    <th mat-header-cell *matHeaderCellDef> Middle Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.middleName}} </td>
+                  </ng-container>
+
+                  <!-- lastName Column -->
+                  <ng-container matColumnDef="lastName">
+                    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+                  </ng-container>
+
+                  <!-- classOrDiv Column -->
+                  <ng-container matColumnDef="classOrDiv">
+                    <th mat-header-cell *matHeaderCellDef> 	Class (Div) </th>
+                    <td mat-cell *matCellDef="let element"> {{element.classOrDiv}} </td>
+                  </ng-container>
+
+                  <!-- amount Column -->
+                  <ng-container matColumnDef="amount">
+                    <th mat-header-cell *matHeaderCellDef> 	Amount </th>
+                    <td mat-cell *matCellDef="let element">
+                      <input class="form-control" placeholder="Enter the past due amount" />
+                    </td>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+                      (click)="selection.toggle(row)">
+                  </tr>
+                </table>
+              </div>
+              <div class="row  clearfix">
+                <div class="col-lg-12 no-padding">
+                  <mat-paginator [length]="100"
+                                 [pageSize]="5"
+                                 [pageSizeOptions]="[5, 10, 25, 100]">
+                  </mat-paginator>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

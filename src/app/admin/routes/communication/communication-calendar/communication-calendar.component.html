@@ -1,0 +1,28 @@
+<form>
+  <div class="row">
+    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <input type="file" #file style="display: none;" #uploadButton >
+      <button mat-raised-button class="dangerHollowThemeBtn mr-2">Attachment
+      </button>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <div class="browseList">
+        <div class="browseListItem">
+          <div class="browseListItemPlaceholder">
+            <img src="assets/images/attachSmBlack.png" alt="">
+            <span class="browseListItemFileName">file name</span>
+          </div>
+          <button class="minBtn pointer" title="Delete"><i class="fa fa-trash"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12 no-padding">
+      <button mat-raised-button class="dangerThemeBtn pull-right">Save</button>
+    </div>
+  </div>
+</form>
+
+<app-communication-datatable></app-communication-datatable>
+

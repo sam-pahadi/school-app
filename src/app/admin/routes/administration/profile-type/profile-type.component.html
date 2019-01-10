@@ -1,0 +1,109 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Profile Type</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>sdfghjk</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 mt-2 dashboard_Box">
+            <mat-button-toggle-group name="profileTtype" aria-label="Profile Type">
+              <mat-button-toggle value="parent" (click)="isOn = true">Parent</mat-button-toggle>
+              <mat-button-toggle value="student" (click)="isOn = false">Student</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+        </div>
+
+        <section class="mt-2">
+          <!-- patent Table -->
+            <div class="table-responsive parentTable" [hidden]="isOn">
+              <h5>Parent Table</h5>
+              <table class="table">
+                <thead>
+                <tr>
+                  <th>Attribute Name</th>
+                  <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>First Name</td>
+                  <td>
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Middle Name</td>
+                  <td>
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Last Name</td>
+                  <td>
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <td colspan="2">
+                    <button mat-raised-button class="dangerThemeBtn customWidth pull-right">
+                      Submit
+                    </button>
+                  </td>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!--student table-->
+          <div class="table-responsive studentTable" [hidden]="!isOn">
+            <h5>Student Table</h5>
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Attribute Name</th>
+                <th>Status</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>First Name</td>
+                <td>
+                  <mat-slide-toggle></mat-slide-toggle>
+                </td>
+              </tr>
+              <tr>
+                <td>D.O.B.</td>
+                <td>
+                  <mat-slide-toggle></mat-slide-toggle>
+                </td>
+              </tr>
+              <tr>
+                <td>Media</td>
+                <td>
+                  <mat-slide-toggle></mat-slide-toggle>
+                </td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td colspan="2">
+                  <button mat-raised-button class="dangerThemeBtn customWidth pull-right">
+                    Submit
+                  </button>
+                </td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+  </div>

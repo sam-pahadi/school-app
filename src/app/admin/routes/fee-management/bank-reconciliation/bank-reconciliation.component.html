@@ -1,0 +1,200 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Reconciliation Report</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <form [formGroup]="reconciliation">
+    <section class="mt-2 pageHeader_right sectionPadding">
+
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select formControlName="vendorSelection" placeholder="Vendor Selection">
+                  <mat-option>Vendor1</mat-option>
+                  <mat-option>Vendor1</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select formControlName="chequeSelection" placeholder="Cheque Selection">
+                  <mat-option>All Cheques</mat-option>
+                  <mat-option>In Hand Cheques</mat-option>
+                  <mat-option>Deposited Cheques</mat-option>
+                  <mat-option>Cleared Cheques</mat-option>
+                  <mat-option>Bounced Cheques</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker1" placeholder="From Date"
+                       formControlName="startDateRange" autocomplete="off">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker2" placeholder="To Date"
+                       formControlName="endDateRange" autocomplete="off">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 startView="year" [startAt]="endDate"></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput placeholder="Cheque Number" formControlName="chequeNum" autocomplete="off">
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput placeholder="Receipt Number" formControlName="receiptNum" autocomplete="off">
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-12 no-padding-both">
+              <button mat-raised-button class="dangerThemeBtn">Submit</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </form>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table class="" #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- studentName Column -->
+                  <ng-container matColumnDef="studentName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Student Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.studentName}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- class Column -->
+                  <ng-container matColumnDef="class">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Class</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.class}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- recNum Column -->
+                  <ng-container matColumnDef="recNum">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Rec No.</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.recNum}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- paymentDate Column -->
+                  <ng-container matColumnDef="paymentDate">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Payment Date</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.paymentDate}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- chequeDate Column -->
+                  <ng-container matColumnDef="chequeDate">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Cheque Date</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.chequeDate}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- chequeNum Column -->
+                  <ng-container matColumnDef="chequeNum">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Cheque Num</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.chequeNum}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- amount Column -->
+                  <ng-container matColumnDef="amount">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Amount</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.amount}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- chequeStatus Column -->
+                  <ng-container matColumnDef="chequeStatus">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Cheque Status</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <mat-form-field>
+                        <mat-select placeholder="-Select-">
+                          <mat-option>In Hand</mat-option>
+                          <mat-option>Cleared</mat-option>
+                          <mat-option>Bounce</mat-option>
+                          <mat-option>Deposite</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- status Column -->
+                  <ng-container matColumnDef="status">
+                    <mat-header-cell *matHeaderCellDef>Status Date</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <mat-form-field>
+                        <input placeholder="Date" matInput>
+                      </mat-form-field>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- reason Column -->
+                  <ng-container matColumnDef="reason">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Reason</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.reason}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- chargeIncurred Column -->
+                  <ng-container matColumnDef="chargeIncurred">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Charge Incurred</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.chargeIncurred}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              </div>
+
+              <div class="row  clearfix">
+                <div class="col-lg-12 no-padding">
+                  <mat-paginator [length]="100"
+                                 [pageSize]="5"
+                                 [pageSizeOptions]="[5, 10, 25, 100]">
+                  </mat-paginator>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

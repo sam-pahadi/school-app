@@ -1,0 +1,33 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Download Report Card</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+    </mat-card-content>
+  </app-shared-card>
+
+  <section class="marginBottom15 mt-3">
+    <div class="row">
+      <div class="col col-md-12 no-padding-both">
+        <button mat-raised-button class="dangerThemeBtn" (click)="openClass()">Select Class/Division</button>
+      </div>
+      <div class="col col-md-12 mt-2 no-padding-both">
+        <label>Term:</label>&nbsp;&nbsp;
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+          <mat-button-toggle value="t1">Term1</mat-button-toggle>
+          <mat-button-toggle value="t2">Term2</mat-button-toggle>
+        </mat-button-toggle-group>
+
+      </div>
+      <div class="col col-md-12 mt-2 no-padding-both">
+        <label>Winter Session:</label>&nbsp;&nbsp;
+        <mat-button-toggle-group name="fontStyle" aria-label="Font Style" multiple >
+          <mat-button-toggle value="t1">Term1</mat-button-toggle>
+          <mat-button-toggle value="t2">Term2</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+      <div class="col col-md-12 mt-2 no-padding-both">
+        <button mat-raised-button class="dangerThemeBtn" style="margin-bottom: 1.2em;">Generate Pdf</button>
+      </div>
+    </div>
+  </section>
+</div>

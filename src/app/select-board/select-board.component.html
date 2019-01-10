@@ -1,0 +1,28 @@
+<div class="padding15">
+
+  <div class="loginWrapper">
+    <div class="login-page">
+      <div class="form">
+        <form [formGroup]="myForm"  (submit)="openViewInquery(myForm.value)">
+        <h5>Please Select The Board</h5>
+        <mat-radio-group class="example-radio-group"  formControlName="board">
+          <mat-radio-button class="example-radio-button" *ngFor="let board of boards" [value]="board" >
+            {{board}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <h5>Select The Required Academic Year</h5>
+        <mat-radio-group class="example-radio-group" formControlName="academicSession">
+          <mat-radio-button class="example-radio-button" *ngFor="let academicyear of academicyears"  [value]="academicyear" >
+            {{academicyear}}
+          </mat-radio-button>
+        </mat-radio-group>
+        <button mat-raised-button class="dangerThemeBtn">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</div>

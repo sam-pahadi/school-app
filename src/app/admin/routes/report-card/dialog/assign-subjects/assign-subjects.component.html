@@ -1,0 +1,87 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"><strong>Assign Subjects</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <div class="table-responsive">
+    <form>
+      <table class="table table-sm">
+        <thead>
+        <tr>
+          <th>Select</th>
+          <th>Grade</th>
+          <th>Subject</th>
+          <th>Display Name</th>
+          <th>Out of Mark</th>
+          <th>Passing Mark</th>
+          <th>Display</th>
+          <th>Count</th>
+          <th>Show Out of Marks</th>
+          <th>Show Total Marks</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td>Qwerty</td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder=" " value="Qwerty">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" required>
+              <input matInput placeholder=" " value="100">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder=" ">
+            </mat-form-field>
+          </td>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td><mat-checkbox></mat-checkbox></td>
+        </tr>
+        <tr>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td>Qwerty</td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder=" " value="Qwerty">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width" required>
+              <input matInput placeholder=" " value="100">
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder=" ">
+            </mat-form-field>
+          </td>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td><mat-checkbox></mat-checkbox></td>
+          <td><mat-checkbox></mat-checkbox></td>
+        </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="mat-dialog-actions">
+  <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+  <!--<span class="spacer"></span>-->
+  <button mat-raised-button class="dangerThemeBtn">Submit</button>
+</mat-dialog-actions>
+
+
+

@@ -1,0 +1,29 @@
+@import "../../../../theme/variables";
+.mat-expansion-panel {
+  box-shadow: none!important;
+}
+.mat-sidenav-container .matSidebarMenu .mat-expansion-panel-body {
+  padding: 0!important;
+}
+.matSidebarMenu {
+  display: block;
+}
+
+.mat-nav-list {position: relative;
+  padding-top: 0;margin-bottom: 1px;
+  .badge{      position: absolute;
+    background: $dangerTheme;
+    right: 12px;
+    top: 15px;
+    font-size: 11px;
+    font-weight: lighter;}
+}
+.sidebarHeader{ padding: 0 !important;
+  background: #fff !important;
+}
+.width22{width: 22px; height: 22px;margin-right: 10px;}
+.mat-list-item-content{padding: 0 19px;}
+.mat-expansion-panel-header{padding: 0 16px;}
+.logo_A{width: 179px;  padding: 10px;}
+.logo_A img{width: 100%;}
+

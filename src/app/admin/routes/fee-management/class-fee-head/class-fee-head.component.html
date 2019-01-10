@@ -1,0 +1,77 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Class Fee Head</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <table mat-table [dataSource]="dataSource">
+
+                <!-- feeHead Column -->
+                <ng-container matColumnDef="feeHead" sticky>
+                  <th mat-header-cell *matHeaderCellDef> Fee Heads/Class </th>
+                  <td mat-cell *matCellDef="let element"> {{element.feeHead}} </td>
+                </ng-container>
+
+                <!-- one_five Column -->
+                <ng-container matColumnDef="one_five">
+                  <th mat-header-cell *matHeaderCellDef> 15 </th>
+                  <td mat-cell *matCellDef="let element"> <mat-checkbox></mat-checkbox> </td>
+                </ng-container>
+
+                <!-- bms Column -->
+                <ng-container matColumnDef="bms">
+                  <th mat-header-cell *matHeaderCellDef> BMS </th>
+                  <td mat-cell *matCellDef="let element"> <mat-checkbox></mat-checkbox> </td>
+                </ng-container>
+
+                <!-- eight_eight Column -->
+                <ng-container matColumnDef="eight_eight">
+                  <th mat-header-cell *matHeaderCellDef> 88 </th>
+                  <td mat-cell *matCellDef="let element"> <mat-checkbox></mat-checkbox> </td>
+                </ng-container>
+
+                <!-- bsc_1 Column -->
+                <ng-container matColumnDef="bsc_1">
+                  <th mat-header-cell *matHeaderCellDef> B.Sc.-I </th>
+                  <td mat-cell *matCellDef="let element"> <mat-checkbox></mat-checkbox> </td>
+                </ng-container>
+
+                <!-- bsc_2 Column -->
+                <ng-container matColumnDef="bsc_2" stickyEnd>
+                  <th mat-header-cell *matHeaderCellDef> B.Sc.-II	 </th>
+                  <td mat-cell *matCellDef="let element"> <mat-checkbox></mat-checkbox> </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              <div class="row  clearfix">
+                <div class="col-lg-12 no-padding">
+                  <mat-paginator [length]="100"
+                                 [pageSize]="5"
+                                 [pageSizeOptions]="[5, 10, 25, 100]">
+                  </mat-paginator>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 col-12 no-padding-both">
+                <button mat-raised-button class="dangerThemeBtn">Update</button>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

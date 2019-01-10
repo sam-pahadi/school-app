@@ -1,0 +1,84 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Manage Division Assignment</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>lorem</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+          <div class="row">
+            <div class="col-md-12 col-sm-12 mt-2 dashboard_Box">
+              <button mat-raised-button class="dangerThemeBtn pull-right">
+                Student's without Division
+              </button>
+              <button mat-raised-button class="dangerThemeBtn btnMarginRight pull-right" (click)="openManageClass()">
+                Select Class & Division
+              </button>
+            </div>
+          </div>
+
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+                  <!-- firstName -->
+                  <ng-container matColumnDef="firstName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> First Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.firstName}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- middleName -->
+                  <ng-container matColumnDef="middleName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Middle Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.middleName}}</mat-cell>
+                  </ng-container>
+
+                  <!-- lastName -->
+                  <ng-container matColumnDef="lastName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Last Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.lastName}}</mat-cell>
+                  </ng-container>
+
+                  <!-- division -->
+                  <ng-container matColumnDef="division">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Class(Div)</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.division}}</mat-cell>
+                  </ng-container>
+
+                  <!--Action -->
+                  <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef>
+                      Change Division
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Edit" matTooltipPosition="above" (click)="openDivision()">
+                        <i class="material-icons fontAwesomeEditColor">edit</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData != null && tempData.length === 0" class="nodataFound">No Information Available</p>
+                <div *ngIf="tempData == null" class="text-center"><img class="imageLoader img-responsive" src="assets/images/icons/loading-circles.gif"></div>
+              </div>
+
+              <mat-paginator [length]="100"
+                             [pageSize]="5"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </section>
+        </section>
+
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

@@ -1,0 +1,174 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Inquiry Manager</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <ul class="inquiryUl">
+        <li><label>Applied: 4</label></li>
+        <li><label>Interview Scheduled: 0</label></li>
+        <li><label>Application Rejected: 0</label></li>
+        <li><label>Waiting Applications: 0</label></li>
+        <li><label>Confirmed Applications: 0</label></li>
+      </ul>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section class="marginBottom15 mt-3">
+    <form class="example-form" [formGroup]="filterForm" novalidate>
+      <mat-card>
+        <div class="row">
+          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field>
+              <mat-select placeholder="Actions" formControlName="action">
+                <mat-option *ngFor="let action of actionType" [value]="action.key">
+                  {{ action.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Student Name" formControlName="studentName"
+                     autocomplete="off" />
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Father Name" formControlName="fatherName"
+                     autocomplete="off" />
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickerDob" placeholder="D.O.B"
+                     formControlName="pickerDob">
+              <mat-datepicker-toggle matSuffix [for]="pickerDob"></mat-datepicker-toggle>
+              <mat-datepicker #pickerDob></mat-datepicker>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Mobile No." formControlName="mobileNum"
+                     autocomplete="off" />
+            </mat-form-field>
+          </div>
+
+          <div class="margintop-4 row" style="width: 100%">
+            <div class="col-md-8 no-padding">
+              <button mat-raised-button class="dangerThemeBtn customWidth btnMarginRight">Search Inquiry</button>
+              <button mat-raised-button class="dangerThemeBtn customWidth">Reset Filter</button>
+            </div>
+            <div class="col-md-4 pull-right text-right no-padding">
+              <button mat-raised-button class="dangerThemeBtn customWidth" (click)="openSelectClass()">New Inquiry</button>
+            </div>
+          </div>
+
+          </div>
+        </mat-card>
+      </form>
+    </section>
+
+  <section class="mt-2 pageHeader_right sectionPadding">
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <div class="example-container mat-elevation-z8">
+          <div class="responsive_table">
+            <mat-table class="" #table [dataSource]="dataSource" matSort  matSortDisableClear="true"
+                       matSortDirection="asc">
+
+              <!-- name Column -->
+              <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div class="dangerColor">{{element.name}}</div>
+                </mat-cell>
+              </ng-container>
+
+              <!-- class Column -->
+              <ng-container matColumnDef="class">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Class </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div>{{element.class}}</div>
+                </mat-cell>
+              </ng-container>
+
+              <!-- gender Column -->
+              <ng-container matColumnDef="gender">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Gender </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div>{{element.gender}}</div>
+                </mat-cell>
+              </ng-container>
+
+              <!-- address Column -->
+              <ng-container matColumnDef="address">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Address </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div>{{element.address}}</div>
+                </mat-cell>
+              </ng-container>
+
+              <!-- contact number Column -->
+              <ng-container matColumnDef="contact_number">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Contact Number </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <div>{{element.contact_number}}</div>
+                </mat-cell>
+              </ng-container>
+
+              <!--&lt;!&ndash; interview Column &ndash;&gt;-->
+              <!--<ng-container matColumnDef="interview">-->
+                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Interview Date/Time </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element">-->
+                  <!--<div>{{element.interview}}</div>-->
+                <!--</mat-cell>-->
+              <!--</ng-container>-->
+
+              <!--&lt;!&ndash; status Column &ndash;&gt;-->
+              <!--<ng-container matColumnDef="status">-->
+                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>-->
+                <!--<mat-cell *matCellDef="let element">-->
+                  <!--<div>{{element.status}}</div>-->
+                <!--</mat-cell>-->
+              <!--</ng-container>-->
+
+              <!--Action -->
+              <ng-container matColumnDef="action">
+                <mat-header-cell *matHeaderCellDef>
+                  Action
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <mat-form-field>
+                    <mat-select placeholder="Actions" (selectionChange)="onchange($event,element._id)">
+                      <mat-option *ngFor="let action of actionType" [value]="action.key">
+                        {{ action.value }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </mat-cell>
+              </ng-container>
+
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+          </div>
+
+          <div class="row  clearfix">
+            <div class="col-lg-12 no-padding">
+              <mat-paginator [length]="100"
+                             [pageSize]="5"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

@@ -1,0 +1,44 @@
+<div class="loginWrapper">
+  <div class="login-page">
+    <div class="form">
+      <img src="assets/images/icons/logo.png" alt="logo" class="mb-2" width="200px">
+      <form [formGroup]="loginForm"  (submit)="signIn(loginForm.value)">
+        <div class="formFade" *ngIf="index == 0">
+          <mat-form-field class="example-full-width">
+            <input type="text" matInput placeholder="Username" formControlName="email" autocomplete="off" required="">
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <input type="password" matInput placeholder="Password" formControlName="password" autocomplete="off" required="">
+          </mat-form-field>
+          <button mat-raised-button class="btn-block dangerThemeBtn" type="submit" [disabled]="loginForm.status.toLowerCase()==='invalid'">Sign In</button>
+          <a href="javascript:void(0);" (click)="nextIndex(0)" class="yellow-text-xs">Forgot Password?</a>
+        </div>
+      </form>
+
+      <form novalidate *ngIf="index >= 1" [formGroup]="myForm" (submit)="forgotPassword(myForm.value)">
+        <div class="formFade" >
+          <h6 class="greyColor h6Font no-padding-both">
+            Password reset link will be shared on your registered email id only
+          </h6>
+          <mat-form-field class="example-full-width">
+            <input type="email" matInput placeholder="Username" formControlName="username" autocomplete="off" required=""/>
+            <mat-error *ngIf="myForm.controls['username'].hasError('required')">
+              Username is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-6 dashboardBox">
+              <button type="submit" class="btn-block mt-1 dangerThemeBtn" mat-raised-button colors="primary" [disabled]="myForm.status.toLowerCase()==='invalid'">Submit</button>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-6 dashboardBox">
+              <button type="button" class="btn-block mt-1 dangerHollowThemeBtn" mat-raised-button colors="primary" (click)="prevIndex(0)">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,112 @@
+@import "../../theme/variables";
+
+.login-page {
+  padding: 13% 0 0;
+  margin: auto;
+}
+.form {min-height: 364px;
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  width: 464px;
+  max-width: 90%;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: $errorColor;
+}
+.loginWrapper {
+  background: $defaultBorder; /* fallback for old browsers */
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  overflow-y: hidden;
+}
+.yellowColorTheme{color: $dangerTheme !important;}
+//.yellowThemeBtn{background: $yellotheme !important;color: #fff;outline: none;}
+//.mat-raised-button.yellowThemeBtn:disabled,
+//.mat-raised-button.yellowThemeBtn[disabled]{background-color: rgb(208, 179, 124) !important;cursor: not-allowed;  }
+//.mat-form-field{
+  //  width: 100%;
+  //}
+.formFade{
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 1s; /* Firefox < 16 */
+  -ms-animation: fadein 1s; /* Internet Explorer */
+  -o-animation: fadein 1s; /* Opera < 12.1 */
+  animation: fadein 1s;
+}
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.yellow-text-xs{color: $dangerTheme;font-size: 14px; clear: both; float: right;margin-top: 10px; transition: 0.2s ease-in-out;}
+.yellow-text-xs:hover{text-decoration: none;color: $dangerTheme;}
+.h6Font{font-size: 12px;}
+.greyColor{color:$txtLight;}
+.dashboardBox:first-child {
+  padding-left: 0;
+}
+
+.dashboardBox:last-child {
+  padding-right: 0;
+}

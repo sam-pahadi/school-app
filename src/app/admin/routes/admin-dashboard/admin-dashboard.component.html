@@ -1,0 +1,196 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Dashboard</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <ul class="mainCardUl">
+        <li>Selected Board: <span>C.B.S.E</span></li>
+        <li>Selected Academic Year: <span>2019-2020 current (CURRENT)</span></li>
+      </ul>
+    </mat-card-content>
+  </app-shared-card>
+  <br>
+
+    <!--widgets -->
+    <div class="row">
+        <div class="col-lg-3 col-md-6 col-sm-6 dashboard_Box">
+            <div class="card card-stats">
+                <div class="card-header" data-background-color="green">
+                    <img src="assets/images/icons/sales.svg" alt="#" class="img-responsive width22">
+                </div>
+                <div class="card-content">
+                    <p class="category">Total Students</p>
+                    <h3 class="card-title">0</h3>
+                </div>
+                <!--<div class="card-footer">-->
+                    <!--<div class="stats">-->
+                        <!--Just Updated-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-sm-6 dashboard_Box">
+            <div class="card card-stats">
+                <div class="card-header" data-background-color="red">
+                    <img src="assets/images/card-icon/order.svg" alt="#" class="img-responsive width22">
+                </div>
+                <div class="card-content">
+                    <p class="category">Teachers</p>
+                    <h3 class="card-title">4</h3>
+                </div>
+                <!--<div class="card-footer">-->
+                    <!--<div class="stats">-->
+                        <!--10min ago-->
+                    <!--</div>-->
+                <!--</div>-->
+            </div>
+        </div>
+
+        <!--<div class="col-lg-3 col-md-6 col-sm-6 dashboard_Box">-->
+            <!--<div class="card card-stats">-->
+                <!--<div class="card-header" data-background-color="orange">-->
+                    <!--<img src="assets/images/card-icon/patient.svg" alt="#" class="img-responsive width22">-->
+                <!--</div>-->
+                <!--<div class="card-content">-->
+                    <!--<p class="category">lorem (2018)</p>-->
+                    <!--<h3 class="card-title">200</h3>-->
+                <!--</div>-->
+                <!--<div class="card-footer">-->
+                    <!--<div class="stats">-->
+                        <!--2min ago-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-lg-3 col-md-6 col-sm-6 dashboard_Box">-->
+            <!--<div class="card card-stats">-->
+                <!--<div class="card-header" data-background-color="blue">-->
+                    <!--<img src="assets/images/card-icon/doctor.svg" alt="#" class="img-responsive width22">-->
+                <!--</div>-->
+                <!--<div class="card-content">-->
+                    <!--<p class="category">lorem (2018)</p>-->
+                    <!--<h3 class="card-title">1000</h3>-->
+                <!--</div>-->
+                <!--<div class="card-footer">-->
+                    <!--<div class="stats">-->
+                        <!--1min ago-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+    <!--widgets -->
+
+    <!--<section class="pageHeader_right sectionPadding">-->
+        <!--<div class="row">-->
+            <!--<div class="col-lg-8 col-md-8 col-sm-12 col-12 dashboard_Box mt-2">-->
+                <!--<mat-card class="cardPanel no-padding">-->
+                    <!--<mat-card-content class="matCardContent">-->
+                        <!--Sales Bar Chart-->
+
+
+                        <!--<div class="row  clearfix">-->
+                            <!--<div class="col-lg-12 no-padding">-->
+                                <!--<ul class="no-padding float_left">-->
+                                    <!--<li>-->
+                                        <!--<div>-->
+                                            <!--<p class="text-pink">200000</p>-->
+                                            <!--<p class="">Total Earnings</p>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</mat-card-content>-->
+                <!--</mat-card>-->
+            <!--</div>-->
+            <!--<div class="col-lg-4 col-md-4 col-sm-12 col-12 dashboard_Box mt-2">-->
+                <!--<mat-card class="cardPanel no-padding">-->
+                    <!--<mat-card-content class="matCardContent">-->
+                        <!--Orders Pie Chart-->
+                    <!--</mat-card-content>-->
+                <!--</mat-card>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
+
+    <!--<section class="mt-2 pageHeader_right sectionPadding">-->
+        <!--<mat-card class="marginBottom15 cardPanel no-padding">-->
+            <!--<mat-card-content class="matCardContent">-->
+                <!--<div class="example-container mat-elevation-z8">-->
+                    <!--<div class="responsive_table">-->
+                        <!--<mat-table class="" #table [dataSource]="dataSource" matSort  matSortDisableClear="true"-->
+                                   <!--matSortDirection="asc">-->
+
+                            <!--&lt;!&ndash; orderId Column &ndash;&gt;-->
+                            <!--<ng-container matColumnDef="orderId">-->
+                                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Order Id </mat-header-cell>-->
+                                <!--<mat-cell *matCellDef="let element">-->
+                                    <!--<div class="dangerColor">{{element.orderId}}</div>-->
+                                <!--</mat-cell>-->
+                            <!--</ng-container>-->
+
+                            <!--&lt;!&ndash; address Column &ndash;&gt;-->
+                            <!--<ng-container matColumnDef="address">-->
+                                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Delivery Address </mat-header-cell>-->
+                                <!--<mat-cell *matCellDef="let element">-->
+                                    <!--<div>{{element.address}}</div>-->
+                                <!--</mat-cell>-->
+                            <!--</ng-container>-->
+
+                            <!--&lt;!&ndash; pharmacy Column &ndash;&gt;-->
+                            <!--<ng-container matColumnDef="pharmacy">-->
+                                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Pharmacy </mat-header-cell>-->
+                                <!--<mat-cell *matCellDef="let element">-->
+                                    <!--<div>{{element.pharmacy}}</div>-->
+                                <!--</mat-cell>-->
+                            <!--</ng-container>-->
+
+                            <!--&lt;!&ndash; amount Column &ndash;&gt;-->
+                            <!--<ng-container matColumnDef="amount">-->
+                                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Amount (₹)</mat-header-cell>-->
+                                <!--<mat-cell *matCellDef="let element">-->
+                                    <!--<div>{{element.amount}}</div>-->
+                                <!--</mat-cell>-->
+                            <!--</ng-container>-->
+
+                            <!--&lt;!&ndash; status Column &ndash;&gt;-->
+                            <!--<ng-container matColumnDef="status">-->
+                                <!--<mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>-->
+                                <!--<mat-cell *matCellDef="let element">-->
+                                    <!--<div class="accepted">{{element.status}}</div>-->
+                                <!--</mat-cell>-->
+                            <!--</ng-container>-->
+
+                            <!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
+                            <!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
+                        <!--</mat-table>-->
+                        <!--<p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>-->
+                    <!--</div>-->
+
+                    <!--<div class="row  clearfix">-->
+                        <!--<div class="col-lg-6 no-padding">-->
+                            <!--<ul class="no-padding float_left">-->
+                                <!--<li>-->
+                                    <!--<div>-->
+                                        <!--<p class="text-blue">25</p>-->
+                                        <!--<p class="">Today Received</p>-->
+                                    <!--</div>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                        <!--<div class="col-lg-6 no-padding">-->
+                            <!--<mat-paginator [length]="100"-->
+                                           <!--[pageSize]="5"-->
+                                           <!--[pageSizeOptions]="[5, 10, 25, 100]">-->
+                            <!--</mat-paginator>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</mat-card-content>-->
+        <!--</mat-card>-->
+    <!--</section>-->
+
+
+</div>

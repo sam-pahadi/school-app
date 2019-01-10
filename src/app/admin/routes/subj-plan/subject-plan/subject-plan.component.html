@@ -1,0 +1,161 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Subject Plan</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>lorem</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section class="marginBottom15 mt-3">
+    <form class="example-form" [formGroup]="subjectPlan" novalidate>
+      <mat-card>
+          <div class="row">
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field>
+                <mat-select placeholder="STD." formControlName="selectStd">
+                  <mat-option *ngFor="let std of selectStd" [value]="std.key">
+                    {{ std.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field>
+                <mat-select placeholder="Select Subject" formControlName="subjectName">
+                  <mat-option *ngFor="let subject of subjectName" [value]="subject.key">
+                    {{ subject.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field>
+                <mat-select placeholder="Subject Topic" formControlName="subjectTopic">
+                  <mat-option> Subject 1
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <button mat-raised-button class="dangerThemeBtn" (click)="openAddTopic()">Add Topic</button>
+            </div>
+          </div>
+       <hr/>
+        <h6>Subject and Total Marks</h6>
+        <div class="row">
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field>
+              <mat-select placeholder="Proceded Topic Name" formControlName="procededTopic">
+                <mat-option *ngFor="let std of selectStd" [value]="std.key">
+                  {{ std.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Aim" formControlName="aim"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Objective" formControlName="objective"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Aid" formControlName="aid"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          </div>
+
+        <div class="row">
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Resources" formControlName="resources"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Methodologies" formControlName="methodologies"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput  placeholder="Techniques" formControlName="techniques"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput  placeholder="Review" formControlName="review"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          </div>
+
+        <div class="row">
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="No. of Lectures" formControlName="noOfLecture"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Priority" formControlName="priority"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+          </div>
+        <hr/>
+        <h6>Setting</h6>
+        <div class="row">
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="Start Date"
+                     formControlName="startDateRange" autocomplete="off">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker2" placeholder="End Date"
+                     formControlName="endDateRange" autocomplete="off">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2 startV iew="year" [startAt]="endDate"></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+            <button mat-raised-button class="dangerThemeBtn">Download Excel Format</button>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12 dashboardBox">
+            <input type="file" #file style="display: none;" #uploadButton>
+            <button mat-raised-button class="dangerHollowThemeBtn mr-2">Add Files
+            </button>
+
+            <div class="browseList">
+              <div class="browseListItem">
+                <div class="browseListItemPlaceholder">
+                  <img src="assets/images/attachSmBlack.png" alt="">
+                  <span class="browseListItemFileName">file name</span>
+                </div>
+                <button class="minBtn pointer" title="Delete"><i class="fa fa-trash"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </mat-card>
+      </form>
+    </section>
+</div>

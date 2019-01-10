@@ -1,0 +1,90 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"> <strong>Upload</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <form [formGroup]="uploadForm" novalidate>
+    <div class="row">
+      <div class="col-lg-6 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Gallery Name" formControlName="galleryName"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Description" formControlName="description"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="Publish On"
+                     formControlName="startDateRange" autocomplete="off">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker2" placeholder="Show Till"
+                     formControlName="endDateRange" autocomplete="off">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2 startV iew="year" [startAt]="endDate"></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <input type="file" #file style="display: none;" #uploadButton>
+            <button mat-raised-button class="dangerHollowThemeBtn mr-2" >Add Files
+            </button>
+
+            <div class="browseList">
+              <div class="browseListItem">
+                <div class="browseListItemPlaceholder">
+                  <img src="assets/images/attachSmBlack.png" alt="">
+                  <span class="browseListItemFileName">file name</span>
+                </div>
+                <button class="minBtn pointer" title="Delete"><i class="fa fa-trash"></i></button>
+              </div>
+            </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>
+  </form>
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end" class="mat-dialog-actions">
+  <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+  <!--<span class="spacer"></span>-->
+  <button mat-raised-button class="dangerThemeBtn">Upload</button>
+</mat-dialog-actions>
+
+

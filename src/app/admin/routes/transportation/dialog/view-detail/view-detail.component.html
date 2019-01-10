@@ -1,0 +1,36 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"><strong>Driver Details</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <div class="row">
+    <div class="col-md-6 dashboardBoxL"><label><span>Name : </span><span class="greyColor">{{data?.firstName}} {{data?.lastName}}</span></label></div>
+    <div class="col-md-6 dashboardBoxR"><label><span>D.O.B. : </span><span class="greyColor">{{data?.dob | date}}</span></label></div>
+    <div class="col-md-6 dashboardBoxR"><label><span>Category : </span><span class="greyColor">{{data?.category}}</span></label></div>
+    <div class="col-md-6 dashboardBoxR"><label><span>Password : </span><span class="greyColor">{{data?.password}}</span></label></div>
+    <!--<div class="col-md-6 dashboardBoxL"><label><span>Physical Remark : </span><span class="greyColor">-</span></label></div>-->
+
+    <div class="col-md-6 dashboardBoxR"><label><span>Nationality : </span><span class="greyColor">INDIAN</span></label></div>
+    <!--<div class="col-md-6 dashboardBoxL"><label><span>Caste : </span><span class="greyColor">-</span></label></div>-->
+    <div class="col-md-6 dashboardBoxR"><label><span>Marital Status : </span><span class="greyColor">{{data?.maritial_status}}</span></label></div>
+    <div class="col-md-6 dashboardBoxL"><label><span>Username : </span><span class="greyColor">{{data?.email}}</span></label></div>
+    <div class="col-md-6 dashboardBoxR"><label><span>Physically Challenged : </span><span class="greyColor">{{data?.physically_challenged}}</span></label></div>
+    <!--<div class="col-md-6 dashboardBoxL"><label><span>Status : </span><span class="greyColor">-</span></label></div>-->
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="col-md-6 dashboardBoxL"><label><span>Address : </span><span class="greyColor">{{data?.address_1}}, {{data?.address_2}}, {{data?.address_3}}</span></label></div>
+    <div class="col-md-6 dashboardBoxR"><label><span>City : </span><span class="greyColor">{{data?.city}} </span></label></div>
+    <div class="col-md-6 dashboardBoxL"><label><span>State : </span><span class="greyColor">{{data?.state}}</span></label></div>
+    <div class="col-md-6 dashboardBoxR"><label><span>Country : </span><span class="greyColor">INDIA</span></label></div>
+    <!--<div class="col-md-6 dashboardBoxL"><label><span>Mobile No. : </span><span class="greyColor">-</span></label></div>-->
+    <!--<div class="col-md-6 dashboardBoxR"><label><span>Email Id : </span><span class="greyColor">-</span></label></div>-->
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="mat-dialog-actions"></mat-dialog-actions>
+
+
+

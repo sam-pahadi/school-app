@@ -1,0 +1,157 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Add Exam Type</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+    </mat-card-content>
+  </app-shared-card>
+
+  <section class="marginBottom15 mt-3">
+    <form class="example-form" [formGroup]="addExamTypeForm" novalidate>
+      <mat-card>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field>
+              <mat-select placeholder="Select Class" formControlName="className" required>
+                <mat-option *ngFor="let classNme of className" [value]="classNme.key">
+                  {{ classNme.value }}
+                </mat-option>
+              </mat-select>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select Class" formControlName="term" required>
+                <mat-option>term1</mat-option>
+                <mat-option>term2</mat-option>
+              </mat-select>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field>
+              <input type="text" matInput placeholder="Exam Name" formControlName="examName"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+            <mat-form-field>
+              <input type="text" matInput placeholder="Total Exam Mark" formControlName="totalExamMark"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field>
+              <input type="text" matInput placeholder="Internal Exam Label" formControlName="internalExamLabel"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+            <mat-form-field>
+              <input type="text" matInput placeholder="Written Exam Mark" formControlName="writtenExamLabel"
+                     autocomplete="off"/>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field class="example-full-width">
+              <mat-select placeholder="Select Exam Type" formControlName="examType">
+                <mat-option>Internal</mat-option>
+                <mat-option>Written</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding mt-3">
+            <button mat-raised-button class="dangerThemeBtn customWidth pull-right" [disabled]="!addExamTypeForm.valid">
+              Submit
+            </button>
+          </div>
+
+        </div>
+      </mat-card>
+    </form>
+  </section>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table class="" #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- className Column -->
+                  <ng-container matColumnDef="className">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Class Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div class="dangerColor">{{element.className}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- examName Column -->
+                  <ng-container matColumnDef="examName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Exam Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.examName}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- termName Column -->
+                  <ng-container matColumnDef="termName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Term Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.termName}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- status Column -->
+                  <ng-container matColumnDef="status">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Status</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <mat-slide-toggle></mat-slide-toggle>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- action Column -->
+                  <ng-container matColumnDef="action">
+                    <mat-header-cell *matHeaderCellDef> Action</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Update" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeEditColor">edit</i>
+                      </button>
+                      <button mat-icon-button matTooltip="Assign Subjects" matTooltipPosition="above" (click)="assignSubject()">
+                        <i class="material-icons fontAwesomeSendColor">assignment_turned_in</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              </div>
+
+              <div class="row  clearfix">
+                <div class="col-lg-12 no-padding">
+                  <mat-paginator [length]="100"
+                                 [pageSize]="5"
+                                 [pageSizeOptions]="[5, 10, 25, 100]">
+                  </mat-paginator>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

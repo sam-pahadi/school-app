@@ -1,0 +1,102 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Late Fee Settings</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <form [formGroup]="late_fee_setting">
+    <section class="mt-2 pageHeader_right sectionPadding">
+
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select formControlName="lateFee" placeholder="Late Fee" required>
+                  <mat-option>Auto</mat-option>
+                  <mat-option>Manual</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput placeholder="Grace Period Per Day" formControlName="gracePeriod">
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <label>Late Fee Accept</label>
+                <mat-button-toggle-group name="lateFee" aria-label="Late Fee" formControlName="lateFeeAccept">
+                  <mat-button-toggle value="Percentage" (click)="isOn = false">Percentage</mat-button-toggle>
+                  <mat-button-toggle value="Flat" (click)="isOn = true">Flat</mat-button-toggle>
+                </mat-button-toggle-group>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-12 no-padding-both">
+              <button mat-raised-button class="dangerThemeBtn">Submit</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </form>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="pageHeader_right sectionPadding mt-2">
+            <div class="table-responsive percentageTable" [hidden]="isOn">
+               <table class="table">
+                  <thead>
+                     <tr>
+                       <th>Fee Heads</th>
+                       <th>Percentage Per Month</th>
+                     </tr>
+                  </thead>
+                 <tbody>
+                    <tr>
+                      <td>Abacus</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Adhhoc1</td>
+                      <td>
+                        <input type="text" class="form-control" />
+                      </td>
+                    </tr>
+                 </tbody>
+               </table>
+            </div>
+
+            <div class="table-responsive flatTable" [hidden]="!isOn">
+            <table class="table">
+              <thead>
+              <tr>
+                <th>Fee Heads</th>
+                <th>Amount</th>
+                <th>Percentage Per Month</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>Abacus</td>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="text" class="form-control" /></td>
+              </tr>
+              <tr>
+                <td>Adhhoc1</td>
+                <td><input type="text" class="form-control" /></td>
+                <td><input type="text" class="form-control" /></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

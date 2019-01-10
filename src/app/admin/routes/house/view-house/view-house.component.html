@@ -1,0 +1,83 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">House</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>lorem</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <form [formGroup]="searchForm">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput placeholder="Search.."
+                       autocomplete="off" formControlName="search" class="textUppercase"
+                       autocomplete="off"/>
+                <i class="fa fa-search" matSuffix></i>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <button mat-raised-button class="dangerThemeBtn pull-right" (click)="openCreateHouseForm()">
+                Create House
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+                  <!-- name -->
+                  <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.name}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- description -->
+                  <ng-container matColumnDef="description">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.description}}</mat-cell>
+                  </ng-container>
+
+                  <!--Action -->
+                  <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef>
+                      Action
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Edit" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeEditColor">edit</i>
+                      </button>
+
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData != null && tempData.length === 0" class="nodataFound">No Information Available</p>
+                <div *ngIf="tempData == null" class="text-center"><img class="imageLoader img-responsive" src="assets/images/icons/loading-circles.gif"></div>
+              </div>
+
+              <mat-paginator [length]="100"
+                             [pageSize]="5"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </section>
+        </section>
+
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>

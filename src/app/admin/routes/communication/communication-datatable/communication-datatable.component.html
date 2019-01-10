@@ -1,0 +1,137 @@
+<hr/>
+<div class="row">
+  <div class="col-md-12 clearfix no-padding">
+    <p><strong>Note: </strong>
+      To share with students, click on
+       <i class="fa fa-share"></i> . To resend any item with past "Show Till" date,
+      click on  <i class="fa fa-share"></i>.
+    </p>
+  </div>
+</div>
+<section class="mt-2">
+        <form [formGroup]="searchForm">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 mt-2 no-padding">
+              <mat-form-field>
+                <input matInput placeholder="Search.."
+                       autocomplete="off" formControlName="search" class="textUppercase"
+                       autocomplete="off"/>
+                <i class="fa fa-search" matSuffix></i>
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+        <section class="pageHeader_right sectionPadding">
+          <div class="example-container mat-elevation-z8">
+            <div class="responsive_table">
+              <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                         matSortDirection="asc">
+
+                <!-- title -->
+                <ng-container matColumnDef="title">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Title</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.title}}</mat-cell>
+                </ng-container>
+
+                <!-- description -->
+                <ng-container matColumnDef="description">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
+                  <mat-cell *matCellDef="let element"><a href="javascript:void(0);" class="active">{{element.description}}</a>
+                  </mat-cell>
+                </ng-container>
+
+                <!-- attachments -->
+                <ng-container matColumnDef="attachments">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Attachments</mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <ul class="hoverbox">
+                      <li>
+                        <a href="assets/images/card-icon/56_1532957898148_9805.jpg" target="_blank"
+                           class="icn">
+                          <img src="assets/images/card-icon/attachmentJpg.png" alt="file"
+                               style="height: 100%; width: 45%;" matTooltip=" Click on View.">
+                        </a>
+                        <a href="javascript:void(0);" class="hoverIcon">
+                          <img alt="del" src="assets/images/icons/circle-delete.svg"  matTooltip="Click for delete file."
+                          ></a>
+                      </li>
+                    </ul>
+                  </mat-cell>
+                </ng-container>
+
+                <!-- showTill -->
+                <ng-container matColumnDef="showTill">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Show Till</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.showTill | date:'mediumDate'}}</mat-cell>
+                </ng-container>
+
+                <!-- updatedOn -->
+                <ng-container matColumnDef="updatedOn">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Updated On</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.updatedOn | date:'mediumDate'}}</mat-cell>
+                </ng-container>
+
+                <!-- createdOn -->
+                <ng-container matColumnDef="createdOn">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Created On</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.createdOn | date:'mediumDate'}}</mat-cell>
+                </ng-container>
+
+                <!-- createdBy -->
+                <ng-container matColumnDef="createdBy">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Created By</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.createdBy}}</mat-cell>
+                </ng-container>
+
+                <!-- updatedBy -->
+                <ng-container matColumnDef="updatedBy">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Updated By</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.updatedBy}}</mat-cell>
+                </ng-container>
+
+                <!-- deviceNum -->
+                <ng-container matColumnDef="deviceNum">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Device No.</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.deviceNum}}</mat-cell>
+                </ng-container>
+
+                <!-- sharedOn -->
+                <ng-container matColumnDef="sharedOn">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header> Shared On</mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{element.sharedOn | date:'mediumDate'}}</mat-cell>
+                </ng-container>
+
+                <!--Action -->
+                <ng-container matColumnDef="actions">
+                  <mat-header-cell *matHeaderCellDef>
+                    Action
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <button mat-icon-button matTooltip="Send" matTooltipPosition="above">
+                      <i class="material-icons fontAwesomeSendColor">send</i>
+                    </button>
+                    <button mat-icon-button matTooltip="Edit" matTooltipPosition="above">
+                      <i class="material-icons fontAwesomeEditColor">edit</i>
+                    </button>
+                    <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                      <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                    </button>
+                  </mat-cell>
+                </ng-container>
+
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+              <p *ngIf="tempData != null && tempData.length === 0" class="nodataFound">No Information Available</p>
+              <div *ngIf="tempData == null" class="text-center"><img class="imageLoader img-responsive"
+                                                                     src="assets/images/icons/loading-circles.gif">
+              </div>
+            </div>
+
+            <mat-paginator [length]="100"
+                           [pageSize]="5"
+                           [pageSizeOptions]="[5, 10, 25, 100]">
+            </mat-paginator>
+          </div>
+        </section>
+      </section>

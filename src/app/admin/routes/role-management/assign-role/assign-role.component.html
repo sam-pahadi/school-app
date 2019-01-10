@@ -1,0 +1,82 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Assign Role</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table class="" #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- userType Column -->
+                  <ng-container matColumnDef="userType" sticky>
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> User (User Type)</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.userType}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- admin Column -->
+                  <ng-container matColumnDef="admin">
+                    <mat-header-cell *matHeaderCellDef> Admin</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- marketing Column -->
+                  <ng-container matColumnDef="marketing">
+                    <mat-header-cell *matHeaderCellDef> Marketing</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- finance Column -->
+                  <ng-container matColumnDef="finance">
+                    <mat-header-cell *matHeaderCellDef> Finance</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- Action Column -->
+                  <ng-container matColumnDef="action" stickyEnd>
+                    <mat-header-cell *matHeaderCellDef> Valid Upto</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <mat-form-field class="example-full-width">
+                        <input matInput [matDatepicker]="pickerDob" placeholder="D.O.B"
+                               formControlName="pickerDob">
+                        <mat-datepicker-toggle matSuffix [for]="pickerDob"></mat-datepicker-toggle>
+                        <mat-datepicker #pickerDob></mat-datepicker>
+                      </mat-form-field>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              </div>
+            </div>
+            <div class="row  clearfix">
+              <div class="col-lg-12 no-padding">
+                <mat-paginator [length]="100"
+                               [pageSize]="5"
+                               [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

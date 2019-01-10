@@ -1,0 +1,29 @@
+<form [formGroup]="homeWork" novalidate>
+  <div class="row">
+    <div class="col-md-6 col-sm-12 mt-2 NoLeftPadding">
+      <mat-form-field>
+        <mat-select placeholder="Class" formControlName="className">
+          <mat-option *ngFor="let classNames of className" [value]="classNames.key">
+            {{ classNames.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="col-md-6 col-sm-12 mt-2 NoLeftPadding">
+      <mat-form-field>
+        <mat-select placeholder="Subject" formControlName="subjName">
+          <mat-option *ngFor="let subject of subjectName" [value]="subject.key">
+            {{ subject.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</form>
+<br>
+
+<ng-container>
+  <app-communication-form></app-communication-form>
+</ng-container>
+<div style="margin-bottom: 100px"></div>
+

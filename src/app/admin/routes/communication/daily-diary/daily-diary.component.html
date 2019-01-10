@@ -1,0 +1,48 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Daily Diary</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>lorem</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <mat-tab-group class="demo-tab-group">
+          <mat-tab label="Event">
+            <div class="demo-tab-content">
+              <br>
+              <app-communication-event></app-communication-event>
+            </div>
+          </mat-tab>
+          <mat-tab label="Notice">
+            <div class="demo-tab-content">
+              <br>
+              <app-communication-notice></app-communication-notice>
+            </div>
+          </mat-tab>
+          <mat-tab label="Homework">
+            <div class="demo-tab-content">
+              <br>
+              <app-communication-homework></app-communication-homework>
+            </div>
+          </mat-tab>
+          <mat-tab label="Calendar">
+            <div class="demo-tab-content">
+              <br>
+              <app-communication-calendar></app-communication-calendar>
+            </div>
+          </mat-tab>
+          <mat-tab label="Consent">
+            <div class="demo-tab-content">
+              <br>
+              <app-communication-consent></app-communication-consent>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

@@ -1,0 +1,129 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"><strong>Add Driver</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <form [formGroup]="addDetailForm" novalidate (ngSubmit)="addBusRoute(addDetailForm.value)">
+    <div class="row">
+      <div class="col-lg-6 dashboard_Box">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Bus Point Name" formControlName="bus_point"
+                     autocomplete="off" required [(ngModel)]="data.bus_point" />
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboard_Box">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Area" formControlName="area"
+                     autocomplete="off" required [(ngModel)]="data.area"/>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6 dashboard_Box">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input type="text" matInput
+                     placeholder="City" autocomplete="off"
+                     formControlName="city"
+                     autocomplete="off" required [(ngModel)]="data.city"/>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboard_Box">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input type="text" matInput
+                     placeholder="Pick Up time"
+                     formControlName="pick_up_time"
+                     autocomplete="off" required [(ngModel)]="data.pick_up_time" />
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <!--<div class="col-lg-6 dashboard_Box">-->
+        <!--<mat-grid-list cols="1" rowHeight="75px">-->
+          <!--<mat-grid-tile>-->
+            <!--<mat-form-field>-->
+              <!--<input type="text" matInput-->
+                     <!--placeholder="Pincode" autocomplete="off"-->
+                     <!--formControlName="pincode"-->
+                     <!--autocomplete="off"/>-->
+            <!--</mat-form-field>-->
+          <!--</mat-grid-tile>-->
+        <!--</mat-grid-list>-->
+      <!--</div>-->
+    </div>
+
+    <!--<div class="row">-->
+      <!--<div class="col-lg-6 dashboard_Box">-->
+        <!--<mat-grid-list cols="1" rowHeight="75px">-->
+          <!--<mat-grid-tile>-->
+            <!--<mat-form-field>-->
+              <!--<input type="text" matInput-->
+                     <!--placeholder="Latitude" autocomplete="off"-->
+                     <!--formControlName="latitude"-->
+                     <!--autocomplete="off"/>-->
+            <!--</mat-form-field>-->
+          <!--</mat-grid-tile>-->
+        <!--</mat-grid-list>-->
+      <!--</div>-->
+      <!--<div class="col-lg-6 dashboard_Box">-->
+        <!--<mat-grid-list cols="1" rowHeight="75px">-->
+          <!--<mat-grid-tile>-->
+            <!--<mat-form-field>-->
+              <!--<input type="text" matInput-->
+                     <!--placeholder="Longitude" autocomplete="off"-->
+                     <!--formControlName="longitude"-->
+                     <!--autocomplete="off"/>-->
+            <!--</mat-form-field>-->
+          <!--</mat-grid-tile>-->
+        <!--</mat-grid-list>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="row">-->
+      <!--<div class="col-lg-6 dashboard_Box">-->
+        <!--<mat-grid-list cols="1" rowHeight="75px">-->
+          <!--<mat-grid-tile>-->
+            <!--<mat-form-field>-->
+              <!--<textarea matInput placeholder="Notes" formControlName="notes"></textarea>-->
+            <!--</mat-form-field>-->
+          <!--</mat-grid-tile>-->
+        <!--</mat-grid-list>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="row">-->
+      <!--<div class="col-lg-6 dashboard_Box">-->
+        <!--<mat-checkbox>Click here if this location is of school</mat-checkbox>-->
+      <!--</div>-->
+    <!--</div>-->
+    <input type="hidden" formControlName="school_id" [(ngModel)]="school_id" />
+    <input type="hidden" formControlName="route_id" [(ngModel)]="route_id" />
+
+    <mat-dialog-actions align="end" class="mat-dialog-actions">
+      <button mat-raised-button class="dangerThemeBtn">Submit</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>
+
+
+
+

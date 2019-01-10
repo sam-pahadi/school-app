@@ -1,0 +1,303 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Parent App Feature</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>test demo</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <form [formGroup]="parentForm">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select placeholder="Select Class" formControlName="className">
+                  <mat-option *ngFor="let classNme of className" [value]="classNme.key">
+                    {{ classNme.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select placeholder="Select Division" formControlName="division">
+                  <mat-option *ngFor="let div of division" [value]="div.key">
+                    {{ div.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <mat-checkbox>Select All</mat-checkbox>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <button mat-raised-button class="dangerThemeBtn customWidth pull-right">Update</button>
+            </div>
+          </div>
+        </form>
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="">
+                <table mat-table class="" #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- student Column -->
+                  <ng-container matColumnDef="student" sticky>
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Student/Features</th>
+                    <th  mat-cell *matCellDef="let element">
+                      <div>{{element.student}}</div>
+                    </th>
+                  </ng-container>
+
+                  <!-- rollNum Column -->
+                  <ng-container matColumnDef="rollNum">
+                    <th mat-header-cell *matHeaderCellDef> Roll No. <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- attendance Column -->
+                  <ng-container matColumnDef="attendance">
+                    <th mat-header-cell *matHeaderCellDef> Attendance <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- timeTable Column -->
+                  <ng-container matColumnDef="timeTable">
+                    <th mat-header-cell *matHeaderCellDef> Timetable <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- review Column -->
+                  <ng-container matColumnDef="review">
+                    <th mat-header-cell *matHeaderCellDef> Review <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- schoolCalendar Column -->
+                  <ng-container matColumnDef="schoolCalendar">
+                    <th mat-header-cell *matHeaderCellDef> School Calendar <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- events Column -->
+                  <ng-container matColumnDef="events">
+                    <th mat-header-cell *matHeaderCellDef> Events <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- notices Column -->
+                  <ng-container matColumnDef="notices">
+                    <th mat-header-cell *matHeaderCellDef> Notices <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- payment Column -->
+                  <ng-container matColumnDef="payment">
+                    <th mat-header-cell *matHeaderCellDef> Payment <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- homework Column -->
+                  <ng-container matColumnDef="homework">
+                    <th mat-header-cell *matHeaderCellDef> Homework <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- mealPlan Column -->
+                  <ng-container matColumnDef="mealPlan">
+                    <th mat-header-cell *matHeaderCellDef> Meal Plan <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- progress Column -->
+                  <ng-container matColumnDef="progress">
+                    <th mat-header-cell *matHeaderCellDef> Progress <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- media Column -->
+                  <ng-container matColumnDef="media">
+                    <th mat-header-cell *matHeaderCellDef> Media <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- callSupport Column -->
+                  <ng-container matColumnDef="callSupport">
+                    <th mat-header-cell *matHeaderCellDef> Call Suport <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- appointment Column -->
+                  <ng-container matColumnDef="appointment">
+                    <th mat-header-cell *matHeaderCellDef> Appointment <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- onlinePayment Column -->
+                  <ng-container matColumnDef="onlinePayment">
+                    <th mat-header-cell *matHeaderCellDef> Online Payment <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- timeline Column -->
+                  <ng-container matColumnDef="timeline">
+                    <th mat-header-cell *matHeaderCellDef> Timeline <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- transport Column -->
+                  <ng-container matColumnDef="transport">
+                    <th mat-header-cell *matHeaderCellDef> Transport <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- smileys Column -->
+                  <ng-container matColumnDef="smileys">
+                    <th mat-header-cell *matHeaderCellDef> Smiley <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- magicCrate Column -->
+                  <ng-container matColumnDef="magicCrate">
+                    <th mat-header-cell *matHeaderCellDef> Magic Crate <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- shareEnquiry Column -->
+                  <ng-container matColumnDef="shareEnquiry">
+                    <th mat-header-cell *matHeaderCellDef> Share Enquiry <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- spellBell Column -->
+                  <ng-container matColumnDef="spellBell">
+                    <th mat-header-cell *matHeaderCellDef> Spell Bell <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- buzz Column -->
+                  <ng-container matColumnDef="buzz">
+                    <th mat-header-cell *matHeaderCellDef> Buzz <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- health Column -->
+                  <ng-container matColumnDef="health">
+                    <th mat-header-cell *matHeaderCellDef> Health <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- faces Column -->
+                  <ng-container matColumnDef="faces">
+                    <th mat-header-cell *matHeaderCellDef> Faces <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- funFacts Column -->
+                  <ng-container matColumnDef="funFacts">
+                    <th mat-header-cell *matHeaderCellDef> Fun Facts <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- stemDots Column -->
+                  <ng-container matColumnDef="stemDots">
+                    <th mat-header-cell *matHeaderCellDef> StemDots <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- curosity Column -->
+                  <ng-container matColumnDef="curosity">
+                    <th mat-header-cell *matHeaderCellDef> Curosity <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <!-- consent Column -->
+                  <ng-container matColumnDef="consent">
+                    <th mat-header-cell *matHeaderCellDef> Consent <mat-checkbox class="ml-2"></mat-checkbox></th>
+                    <th mat-cell *matCellDef="let element">
+                      <mat-checkbox></mat-checkbox>
+                    </th>
+                  </ng-container>
+
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+
+                </table>
+                <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              </div>
+
+
+            </div>
+            <div class="row  clearfix">
+              <div class="col-lg-12 no-padding">
+                <mat-paginator [length]="100"
+                               [pageSize]="5"
+                               [pageSizeOptions]="[5, 10, 25, 100]">
+                </mat-paginator>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

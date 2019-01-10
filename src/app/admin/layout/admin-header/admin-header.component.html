@@ -1,0 +1,48 @@
+ <mat-toolbar color="warn" role="header" barShadow>
+    <mat-toolbar-row>
+        <div class="matHeaderSearch">
+            <button class="rippleCircle" mat-icon-button style="margin-right: 5px; font-size: 22px"
+                    (click)="toggleSidebar()">
+                <i class="fa fa-bars" area-hidden="true"></i>
+            </button>
+
+            <!--<div class="header_search">-->
+            <!--<img class="btnIcon" src="assets/images/icons/search.png" alt="img">-->
+            <!--<form [formGroup]="searchForm">-->
+            <!--<input formControlName="searchText" type="text" class="form-control" placeholder="Search...">-->
+            <!--</form>-->
+            <!--</div>-->
+        </div>
+        <div class="matToolBar_spacer"></div>
+
+        <div class="matHeaderRight">
+            <div class="userBlock">
+                <div class="userBlock_img">
+                    <img src="assets/images/icons/userImage.png" alt="img">
+                </div>
+                <div class="userBlock_detail">
+                    <div class="userBlock_userRole">{{userName}}</div>
+                </div>
+            </div>
+            <div class="headerRightButtons">
+                <a mat-icon-button [matMenuTriggerFor]="menu" title="Profile" class="btnIcon rippleCircle"
+                   mat-mini-fab
+                   noShadow noBg color="primary">
+                    <img class="btn_iconImg" src="assets/images/icons/setting-dot.png" alt="dot">
+                </a>
+                <mat-menu #menu="matMenu">
+
+                    <button mat-menu-item (click)="openResetPassword()">
+                      <i class="fa fa-key width19"></i>
+                        <span>Change Password</span>
+                    </button>
+                    <button mat-menu-item [routerLink]="['/login']" (click)="onLoggedout()">
+                      <i class="fa fa-lock width19"></i>
+                        <span>Sign Out</span>
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,49 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Approve Profile Update</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <form [formGroup]="approveForm" novalidate>
+          <mat-card>
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+                <mat-form-field>
+                  <mat-select placeholder="Select Entity" formControlName="selectList">
+                    <mat-option *ngFor="let selectList of entityFromList" [value]="selectList">{{selectList}}</mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker1" placeholder="From Date"
+                         formControlName="startDateRange" autocomplete="off">
+                  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+                <mat-form-field>
+                  <input matInput [matDatepicker]="picker2" placeholder="To date"
+                         formControlName="endDateRange" autocomplete="off">
+                  <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                  <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+                <button mat-raised-button class="dangerThemeBtn customWidth">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </mat-card>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

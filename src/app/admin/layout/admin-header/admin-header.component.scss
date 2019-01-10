@@ -1,0 +1,61 @@
+@import "../../../../theme/variables";
+
+mat-toolbar[role='header'] {
+  background: $dangerTheme;
+  position: relative;
+  z-index: 1;
+}
+
+.matToolBar_spacer {
+  flex: 1 1 auto;
+}
+
+.matHeaderRight {
+  display: flex;
+  align-items: center;
+}
+
+.userBlock {
+  display: flex;
+  align-items: center;
+  padding-right: 15px;
+  .userBlock_img {
+    img {
+      height: 40px;
+      border-radius: 50%;
+    }
+    padding-right: 8px;
+  }
+  .userBlock_detail {
+    line-height: 1.2;
+    .userBlock_userName {
+      color: #fff;
+      font-size: 14px;
+    }
+    .userBlock_userRole {
+      color: #fff;
+      font-size: 16px; text-transform: uppercase;
+    }
+  }
+}
+
+.width22 {
+  width: 22px;
+  height: 22px;
+}
+
+.width19 {
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
+}
+.mat-menu-item, .mat-menu-item img{
+  transition: 0.3s ease-in-out;
+  &:hover img{transform: scale(1.1,1.1);}
+}
+.mat-menu-item:hover:not([disabled]), .mat-menu-item.cdk-program-focused:not([disabled]), .mat-menu-item.cdk-keyboard-focused:not([disabled]), .mat-menu-item-highlighted:not([disabled]) {
+  color: $dangerTheme;
+}
+
+
+

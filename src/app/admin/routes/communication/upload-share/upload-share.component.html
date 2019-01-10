@@ -1,0 +1,124 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Upload & Share</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>lorem</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <div class="row">
+          <div class="col-md-12 col-sm-12 mt-2 dashboard_Box">
+            <button mat-raised-button class="dangerThemeBtn pull-right" (click)="upload()">
+              Upload
+            </button>
+          </div>
+        </div>
+
+        <section class="mt-2">
+          <form [formGroup]="searchForm">
+            <div class="row">
+              <div class="col-md-6 col-sm-12 mt-2 no-padding">
+                <mat-form-field>
+                  <input matInput placeholder="Search.."
+                         autocomplete="off" formControlName="search" class="textUppercase"
+                         autocomplete="off"/>
+                  <i class="fa fa-search" matSuffix></i>
+                </mat-form-field>
+              </div>
+            </div>
+          </form>
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+                  <!-- name -->
+                  <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.name}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- description -->
+                  <ng-container matColumnDef="description">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> <a href="javascript:void(0);" (click)="viewDetail()">View</a></mat-cell>
+                  </ng-container>
+
+                  <!-- media -->
+                  <ng-container matColumnDef="media">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Media</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <ul class="hoverbox">
+                        <li><a class="example-image-link" href="javascript:void(0);" data-lightbox="example-set3" data-title="">
+                          <img src="http://www.rubixpower.com:8080/RubixTotal/resources/media/38/56/Aug-2018/Thumbnails/38_56_15337377019870.6560227758694059.jpg" alt="#">
+                        </a>
+                          <a href="javascript:void(0);">
+                          <i class="fa fa-times" style="height: 10px; width: 10px"></i>
+                        </a>
+                        </li>
+                      </ul>
+                      <ul class="hoverbox">
+                        <li><a class="example-image-link" href="javascript:void(0);" data-lightbox="example-set3" data-title="">
+                          <img src="http://www.rubixpower.com:8080/RubixTotal/resources/media/38/56/Aug-2018/Thumbnails/38_56_15337377019870.6560227758694059.jpg" alt="#">
+                        </a>
+                          <a href="javascript:void(0);">
+                            <i class="fa fa-times" style="height: 10px; width: 10px"></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- showTill -->
+                  <ng-container matColumnDef="showTill">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Show Till</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.showTill}}</mat-cell>
+                  </ng-container>
+
+                  <!--Action -->
+                  <ng-container matColumnDef="actions">
+                    <mat-header-cell *matHeaderCellDef>
+                      Action
+                    </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Download" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDownloadColor">get_app</i>
+                      </button>
+
+                      <button mat-icon-button matTooltip="Share" matTooltipPosition="above" (click)="shareIt()">
+                        <i class="material-icons fontAwesomeSendColor">share</i>
+                      </button>
+
+                      <button mat-icon-button matTooltip="Edit" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeEditColor">edit</i>
+                      </button>
+
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData != null && tempData.length === 0" class="nodataFound">No Information Available</p>
+                <div *ngIf="tempData == null" class="text-center"><img class="imageLoader img-responsive" src="assets/images/icons/loading-circles.gif"></div>
+              </div>
+
+              <mat-paginator [length]="100"
+                             [pageSize]="5"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+                </div>
+            </section>
+          </section>
+
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

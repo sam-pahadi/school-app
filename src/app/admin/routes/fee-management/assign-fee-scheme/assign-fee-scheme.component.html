@@ -1,0 +1,85 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Assign Fee Scheme</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <form [formGroup]="feeScheme">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <mat-select placeholder="Select Class" formControlName="className">
+                      <mat-option *ngFor="let classNme of className" [value]="classNme.key">
+                        {{ classNme.value }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <mat-select placeholder="Select Division" formControlName="division">
+                      <mat-option *ngFor="let div of division" [value]="div.key">
+                        {{ div.value }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-button-toggle-group name="selectHere" aria-label="select Here">
+                    <mat-button-toggle value="applySingle">Apply Single</mat-button-toggle>
+                    <mat-button-toggle value="applyMultiple">Apply Multiple</mat-button-toggle>
+                  </mat-button-toggle-group>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn">Create New</button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                <tr>
+                  <th width="5%" align="center">Select</th>
+                  <th align="center">Scheme Name</th>
+                  <th align="center">Valid From</th>
+                  <th align="center">Valid Upto</th>
+                </tr>
+                </thead>
+
+                <tbody><tr>
+                  <td width="5%">
+                    <mat-checkbox></mat-checkbox>
+                  </td>
+                  <td>Free games</td>
+                  <td>02/07/2018</td>
+                  <td>01/07/2020</td>
+                </tr>
+
+                </tbody></table>
+              </div>
+            <button mat-raised-button class="dangerThemeBtn">Create New</button>
+            </section>
+          </section>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </div>

@@ -1,0 +1,119 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Manage Driver</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>test demo</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <form [formGroup]="searchForm">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput placeholder="Search.."
+                       autocomplete="off" formControlName="search" class="textUppercase"
+                       autocomplete="off"/>
+                <i class="fa fa-search" matSuffix></i>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <button mat-raised-button class="dangerThemeBtn customWidth pull-right" (click)="openAddDetailPage(null)">Add</button>
+            </div>
+          </div>
+        </form>
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table class="" #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- fullName Column -->
+                  <ng-container matColumnDef="firstName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Full Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.firstName}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- gender Column -->
+                  <ng-container matColumnDef="gender">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Gender</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.gender}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- dob Column -->
+                  <ng-container matColumnDef="dob">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> D.O.B.</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.dob}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- userName Column -->
+                  <ng-container matColumnDef="userName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> User Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.userName}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- mobNum Column -->
+                  <ng-container matColumnDef="mobNum">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile No.</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.mobNum}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- status Column -->
+                  <ng-container matColumnDef="type">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Type</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.type}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- Action Column -->
+                  <ng-container matColumnDef="action">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Action</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="View" matTooltipPosition="above" (click)="openDetailPage(element)">
+                        <i class="material-icons fontAwesomeSendColor">visibility</i>
+                      </button>
+                      <button mat-icon-button matTooltip="Edit" matTooltipPosition="above" (click)="openAddDetailPage(element)">
+                        <i class="material-icons fontAwesomeEditColor">edit</i>
+                      </button>
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above" (click)="deleteDriver(element._id)">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              </div>
+
+              <div class="row  clearfix">
+                <div class="col-lg-12 no-padding">
+                  <mat-paginator [length]="100"
+                                 [pageSize]="5"
+                                 [pageSizeOptions]="[5, 10, 25, 100]">
+                  </mat-paginator>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  </div>

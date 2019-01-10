@@ -1,0 +1,15 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidebar mode="side" opened="true" class="matSideNave">
+    <app-admin-sidebar (sidebarAction_sidebar)="closeSidebar()"></app-admin-sidebar>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-admin-header (sidebarAction)="toggleSidebar(sidebar)"></app-admin-header>
+    <div class="pagePlaceHolder col-lg-12">
+      <router-outlet></router-outlet>
+    </div>
+    <app-admin-footer  (sidebarAction)="toggleSidebar(sidebar)"></app-admin-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+

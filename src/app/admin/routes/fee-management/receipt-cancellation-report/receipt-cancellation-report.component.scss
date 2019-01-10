@@ -1,0 +1,15 @@
+.mat-table{
+  min-width: 1920px !important;
+}
+.dashboard_Box:first-child{padding-left: 0;}
+.dashboard_Box:last-child{padding-right: 0;}
+.mat-table .mat-cell{
+  white-space: normal;
+  text-overflow: initial;
+  word-break: break-word; word-break: break-all;word-break: break-all;
+}
+.mat-table .mat-header-cell{
+  font-size: 13px;
+  word-break: break-word; word-break: break-all;word-break: break-all;
+  padding: 5px;
+}

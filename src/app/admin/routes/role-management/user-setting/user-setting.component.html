@@ -1,0 +1,80 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">User Setting</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="">
+                <mat-table class="" #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- user Column -->
+                  <ng-container matColumnDef="user">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> User</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.user}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- region Column -->
+                  <ng-container matColumnDef="region">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Select Region</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.region}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- city Column -->
+                  <ng-container matColumnDef="city">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Select City</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.city}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- area Column -->
+                  <ng-container matColumnDef="area">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Select Area</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.area}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- action Column -->
+                  <ng-container matColumnDef="action">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Action</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Edit" matTooltipPosition="above" (click)="openUpdate()">
+                        <i class="material-icons fontAwesomeEditColor">edit</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              </div>
+
+              <div class="row  clearfix">
+                <div class="col-lg-12 no-padding">
+                  <mat-paginator [length]="100"
+                                 [pageSize]="5"
+                                 [pageSizeOptions]="[5, 10, 25, 100]">
+                  </mat-paginator>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

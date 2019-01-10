@@ -1,0 +1,1409 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Class Fee Heads Nature</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="classFeeHeadTable">
+                <tbody>
+                <tr>
+                  <th width="12%" align="center">Fee Heads</th>
+                  <th width="7%" align="center">Refundable</th>
+                  <!-- <th width="12%" align="center">Installment</th>
+                                                    <th width="12%" align="center">Installment Dates</th> -->
+                  <th width="15%" align="center">Student Applicable
+                  </th>
+                  <th width="7%" align="center">Late Fees Applicable</th>
+                  <th width="12%;" align="center">Billing In The Name Of</th>
+                  <th width="7%" align="center">Pay Order</th>
+                  <th width="7%" align="center">Display Order</th>
+                </tr>
+
+                <tr>
+                  <td width="12%">Registration charge</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor429" name="hiddenVendor429"
+                                                        value=" 99">
+                    <div class="form-group" id="vendorTableId429">
+
+                      <table id="vendorTableBody429" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info" (click)="selectVendor();">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Admission Fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor430" name="hiddenVendor430"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId430">
+
+                      <table id="vendorTableBody430" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Lab Fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor431" name="hiddenVendor431"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId431">
+
+                      <table id="vendorTableBody431" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Term Fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor432" name="hiddenVendor432"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId432">
+
+                      <table id="vendorTableBody432" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Adhhoc1</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor679" name="hiddenVendor679"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId679">
+
+                      <table id="vendorTableBody679" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Sports Fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor739" name="hiddenVendor739"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId739">
+
+                      <table id="vendorTableBody739" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Security Deposit</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor740" name="hiddenVendor740"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId740">
+
+                      <table id="vendorTableBody740" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">daycare additional</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor822" name="hiddenVendor822"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId822">
+
+                      <table id="vendorTableBody822" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">test</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor853" name="hiddenVendor853"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId853">
+
+                      <table id="vendorTableBody853" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Transport fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor887" name="hiddenVendor887"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId887">
+
+                      <table id="vendorTableBody887" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Transport</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1133" name="hiddenVendor1133"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1133">
+
+                      <table id="vendorTableBody1133" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">computer fees</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1223" name="hiddenVendor1223"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1223">
+
+                      <table id="vendorTableBody1223" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Breakage</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1253" name="hiddenVendor1253"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1253">
+
+                      <table id="vendorTableBody1253" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Education fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1314" name="hiddenVendor1314"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1314">
+
+                      <table id="vendorTableBody1314" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Hostel fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1315" name="hiddenVendor1315"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1315">
+
+                      <table id="vendorTableBody1315" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">ad fees</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1416" name="hiddenVendor1416"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1416">
+
+                      <table id="vendorTableBody1416" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Transport Fare</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1479" name="hiddenVendor1479"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1479">
+
+                      <table id="vendorTableBody1479" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">bus</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1674" name="hiddenVendor1674"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1674">
+
+                      <table id="vendorTableBody1674" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Admin</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1688" name="hiddenVendor1688"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1688">
+
+                      <table id="vendorTableBody1688" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Others</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1720" name="hiddenVendor1720"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1720">
+
+                      <table id="vendorTableBody1720" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link " >SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Abacus</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1767" name="hiddenVendor1767"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1767">
+
+                      <table id="vendorTableBody1767" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">tuition fees</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1931" name="hiddenVendor1931"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1931">
+
+                      <table id="vendorTableBody1931" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Gaana Fees</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1964" name="hiddenVendor1964"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1964">
+
+                      <table id="vendorTableBody1964" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">Dance Fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor1965" name="hiddenVendor1965"
+                                                        value=" 99">
+
+                    <div class="form-group" id="vendorTableId1965">
+
+                      <table id="vendorTableBody1965" class="table">
+
+
+                        <tbody>
+                        <tr>
+                          <td class="info">Utsav International School,,,</td>
+                        </tr>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="0">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="0">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">tution fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor2012" name="hiddenVendor2012"
+                                                        value="">
+
+                    <div class="form-group" id="vendorTableId2012">
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">book fee</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor2013" name="hiddenVendor2013"
+                                                        value="">
+
+                    <div class="form-group" id="vendorTableId2013">
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Pay Order" required="" value="">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+                             placeholder="Display Order" required="" value="">
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td width="12%">jjj</td>
+                  <td width="7%" align="center">
+                    <mat-slide-toggle></mat-slide-toggle>
+                  </td>
+
+                  <td width="15%">
+                    <mat-button-toggle-group name="StudentApplicable" aria-label="Student Applicable">
+                      <mat-button-toggle value="new">New</mat-button-toggle>
+                      <mat-button-toggle value="old">Old</mat-button-toggle>
+                      <mat-button-toggle value="both">Both</mat-button-toggle>
+                    </mat-button-toggle-group>
+                  </td>
+
+                  <td width="7%" align="center">
+
+                    <mat-slide-toggle></mat-slide-toggle>
+
+                  </td>
+                  <td align="center" width="12%"><input type="hidden" id="hiddenVendor2163" name="hiddenVendor2163"
+                                                        value="">
+
+                    <div class="form-group" id="vendorTableId2163">
+
+                    </div>
+                    <a class="div-chk-margin cursor-pointer link ">SELECT BILLING
+                      PARTY</a></td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+
+                             placeholder="Pay Order" required="" value="">
+                    </div>
+                  </td>
+                  <td align="center" width="7%">
+                    <div class="form-group">
+                      <input type="text" class="form-control small_number_text_field"
+
+                             placeholder="Display Order" required="" value="">
+                    </div>
+                  </td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-md-12 col-12">
+                <button mat-raised-button class="dangerThemeBtn">Submit</button>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

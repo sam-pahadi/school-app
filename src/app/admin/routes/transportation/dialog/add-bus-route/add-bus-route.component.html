@@ -1,0 +1,193 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"><strong>Add Driver</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <mat-tab-group>
+    <!--<mat-tab label="Add Route">-->
+      <!--<form [formGroup]="addRouteInfoForm" novalidate>-->
+        <!--<div class="row">-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field class="example-full-width">-->
+                  <!--<input type="text" matInput placeholder="Route Name" formControlName="routeName"-->
+                         <!--autocomplete="off" required/>-->
+                  <!--<mat-error>Required Field</mat-error>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field>-->
+                  <!--<mat-select placeholder="Driver Name" formControlName="driverName">-->
+                    <!--<mat-option>Driver 1</mat-option>-->
+                    <!--<mat-option>Driver 2</mat-option>-->
+                  <!--</mat-select>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="row">-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field>-->
+                  <!--<mat-select placeholder="Assistant Name" formControlName="assistant">-->
+                    <!--<mat-option>Assistant 1</mat-option>-->
+                    <!--<mat-option>Assistant 2</mat-option>-->
+                  <!--</mat-select>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field>-->
+                  <!--<mat-select placeholder="Bus Route Type" formControlName="busRouteType">-->
+                    <!--<mat-option>Pickup</mat-option>-->
+                    <!--<mat-option>Drop</mat-option>-->
+                  <!--</mat-select>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="row">-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field>-->
+                  <!--<textarea matInput placeholder="Notes" formControlName="notes"></textarea>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<br>-->
+            <!--<button mat-raised-button class="dangerThemeBtn">Submit</button>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--</form>-->
+    <!--</mat-tab>-->
+    <mat-tab label="Route Driver">
+      <form [formGroup]="addRouteDetailForm" novalidate (ngSubmit)="mapData(addRouteDetailForm.value)">
+        <div class="row">
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field class="example-full-width">-->
+                  <!--<mat-select placeholder="Bus Route" formControlName="busRoute" required>-->
+                    <!--<mat-option>Delhi</mat-option>-->
+                  <!--</mat-select>-->
+                  <!--<mat-error>Required Field</mat-error>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+          <div class="col-lg-6 dashboard_Box">
+            <mat-grid-list cols="1" rowHeight="75px">
+              <mat-grid-tile>
+                <mat-form-field>
+                  <mat-select placeholder="Driver name" formControlName="driver_id" required>
+                    <mat-option disabled="">SELECT</mat-option>
+                    <mat-option *ngFor="let driver of driverData" [value]="driver._id">{{driver.firstName}}</mat-option>
+                  </mat-select>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+          <div class="col-lg-6 dashboard_Box">
+            <mat-grid-list cols="1" rowHeight="75px">
+              <mat-grid-tile>
+                <mat-form-field>
+                  <mat-select placeholder="Route Point" formControlName="route_id" required>
+                    <mat-option disabled="">SELECT</mat-option>
+                    <mat-option *ngFor="let route of routeData" [value]="route._id">{{route.bus_point}}</mat-option>
+                  </mat-select>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </mat-grid-tile>
+            </mat-grid-list>
+          </div>
+        </div>
+
+        <!--<div class="row">-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput placeholder="Sequence No." formControlName="sequenceNum"-->
+                         <!--autocomplete="off" required/>-->
+                  <!--<mat-error>Required Field</mat-error>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput placeholder="Dist. From Prev. Point(KM)" formControlName="distance"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="row">-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput placeholder="Arrival Time (HH:MM Format)" formControlName="arrival"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+            <!--<mat-grid-list cols="1" rowHeight="75px">-->
+              <!--<mat-grid-tile>-->
+                <!--<mat-form-field>-->
+                  <!--<input type="text" matInput placeholder="Wait Time(MM Format) :	00" formControlName="wait"-->
+                         <!--autocomplete="off"/>-->
+                <!--</mat-form-field>-->
+              <!--</mat-grid-tile>-->
+            <!--</mat-grid-list>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="row">-->
+          <!--<div class="col-lg-6 dashboard_Box">-->
+
+          <!--</div>-->
+          <div class="col-lg-6 dashboard_Box">
+            <button mat-raised-button class="dangerThemeBtn">Submit</button>
+          </div>
+        <!--</div>-->
+
+      </form>
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="mat-dialog-actions">
+
+  <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+  <!--<span class="spacer"></span>-->
+</mat-dialog-actions>
+
+
+

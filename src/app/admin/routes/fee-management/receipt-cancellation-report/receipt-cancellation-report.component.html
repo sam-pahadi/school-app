@@ -1,0 +1,185 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Receipt Cancellation Report
+    </mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <form [formGroup]="feeCollectionReport">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker1" placeholder="Valid From"
+                           formControlName="startDateRange" autocomplete="off">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker2" placeholder="Valid Upto"
+                           formControlName="endDateRange" autocomplete="off">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 startView="year" [startAt]="endDate"></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn">View Daily Collection Report</button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn">Excel Export</button>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <label>display date here</label>
+                </div>
+              </div>
+            </form>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+
+  <section class="mt-2 pageHeader_right sectionPadding">
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <div class="example-container mat-elevation-z8">
+          <div class="responsive_table">
+            <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                       matSortDirection="asc">
+
+              <!-- cancelledData -->
+              <ng-container matColumnDef="cancelledData">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Cancelled Data</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.cancelledData}}
+                </mat-cell>
+              </ng-container>
+
+              <!--rollNum -->
+              <ng-container matColumnDef="rollNum">
+                <mat-header-cell *matHeaderCellDef> Roll No.</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.rollNum}}
+                </mat-cell>
+              </ng-container>
+
+              <!-- name -->
+              <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}}
+                </mat-cell>
+              </ng-container>
+
+              <!--class -->
+              <ng-container matColumnDef="class">
+                <mat-header-cell *matHeaderCellDef> Class</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.class}}
+                </mat-cell>
+              </ng-container>
+
+              <!--receiptNum -->
+              <ng-container matColumnDef="receiptNum">
+                <mat-header-cell *matHeaderCellDef> Receipt No.</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.receiptNum}}
+                </mat-cell>
+              </ng-container>
+
+              <!--receiptType -->
+              <ng-container matColumnDef="receiptType">
+                <mat-header-cell *matHeaderCellDef> Receipt Type</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.receiptType}}
+                </mat-cell>
+              </ng-container>
+
+              <!--date -->
+              <ng-container matColumnDef="date">
+                <mat-header-cell *matHeaderCellDef> Date</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.date}}
+                </mat-cell>
+              </ng-container>
+
+              <!--paidFees -->
+              <ng-container matColumnDef="paidFees">
+                <mat-header-cell *matHeaderCellDef> Paid Fees</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.paidFees}}
+                </mat-cell>
+              </ng-container>
+
+              <!--paymentMode -->
+              <ng-container matColumnDef="paymentMode">
+                <mat-header-cell *matHeaderCellDef> Payment Mode</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.paymentMode}}
+                </mat-cell>
+              </ng-container>
+
+              <!--installmentName -->
+              <ng-container matColumnDef="installmentName">
+                <mat-header-cell *matHeaderCellDef> Installment</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.installmentName}}
+                </mat-cell>
+              </ng-container>
+
+              <!--discount -->
+              <ng-container matColumnDef="discount">
+                <mat-header-cell *matHeaderCellDef> Discount</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.discount}}
+                </mat-cell>
+              </ng-container>
+
+              <!--cancelledBy -->
+              <ng-container matColumnDef="cancelledBy">
+                <mat-header-cell *matHeaderCellDef> Cancelled By</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.cancelledBy}}
+                </mat-cell>
+              </ng-container>
+
+              <!--reason -->
+              <ng-container matColumnDef="reason">
+                <mat-header-cell *matHeaderCellDef> Receipt Cancellation Reason</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.reason}}
+                </mat-cell>
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <p *ngIf="tempData != null && tempData.length === 0" class="nodataFound">No Information Available</p>
+            <div *ngIf="tempData == null" class="text-center"><img class="imageLoader img-responsive"
+                                                                   src="assets/images/icons/loading-circles.gif"></div>
+          </div>
+
+          <div class="row  clearfix">
+            <div class="col-lg-12 no-padding">
+              <mat-paginator [length]="100"
+                             [pageSize]="5"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

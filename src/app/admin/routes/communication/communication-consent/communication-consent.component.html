@@ -1,0 +1,72 @@
+<form [formGroup]="consentForm" >
+  <div class="row">
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <mat-form-field>
+        <input type="text" matInput
+               placeholder="Enter Title" autocomplete="off"
+               formControlName="title"
+               autocomplete="off"/>
+      </mat-form-field>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker1" placeholder="Send On"
+               formControlName="startDateRange" autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker2" placeholder="Show Till"
+               formControlName="endDateRange" autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2 startV iew="year" [startAt]="endDate"></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <mat-form-field>
+        <textarea matInput placeholder="Description" formControlName="description"></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <label class="custLabel">Transport Required</label>
+      <mat-radio-group>
+        <mat-radio-button value="single" class="mr-1">Single</mat-radio-button>
+        <mat-radio-button value="multiple">Multiple</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <mat-form-field>
+        <input type="text" matInput
+               placeholder="Enter Options" autocomplete="off"
+               formControlName="options"
+               autocomplete="off"/>
+      </mat-form-field>
+  </div>
+    <div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <button mat-raised-button class="dangerHollowThemeBtn">Add to List</button>
+    </div>
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 mt-2 dashboard_Box">
+      <mat-list>
+        <h3 mat-subheader>Options</h3>
+        <mat-divider></mat-divider>
+        <mat-list-item *ngFor="let option of options">
+          <h4 mat-line>{{option.name}}</h4>
+          <p class="text-right"> <i class="fa fa-times-circle"></i></p>
+        </mat-list-item>
+      </mat-list>
+    </div>
+</div>
+  <div class="row"><br>
+    <div class="col-md-12 no-padding">
+      <button mat-raised-button class="dangerThemeBtn pull-right">Save</button>
+    </div>
+  </div>
+</form>
+
+<app-communication-datatable></app-communication-datatable>

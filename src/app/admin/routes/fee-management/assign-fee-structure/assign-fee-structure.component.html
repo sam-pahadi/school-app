@@ -1,0 +1,89 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Assign Fee Structures</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <form [formGroup]="feeStructure">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <mat-select placeholder="Select Class" formControlName="className">
+                      <mat-option *ngFor="let classNme of className" [value]="classNme.key">
+                        {{ classNme.value }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <mat-select placeholder="Select Division" formControlName="division">
+                      <mat-option *ngFor="let div of division" [value]="div.key">
+                        {{ div.value }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn" (click)="createNew()">Create New</button>
+                </div>
+              </div>
+
+            </form>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                <tr class="text-uppercase">
+                  <th width="5%" align="center">Select</th>
+                  <th align="center">Structure Name</th>
+                  <th align="center">Valid From</th>
+                  <th align="center">Valid upto</th>
+                  <th align="center">Total Amount</th>
+                  <th align="center">Update</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                  <td width="5%">
+                    <mat-checkbox></mat-checkbox>
+                  </td>
+                  <td>7 th class</td>
+                  <td>05/04/2018</td>
+                  <td>31/03/2019</td>
+                  <td>9,000</td>
+                  <td>
+                    <button mat-icon-button matTooltip="Update" matTooltipPosition="above">
+                      <i class="material-icons fontAwesomeEditColor">edit</i>
+                    </button>
+                  </td>
+                </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

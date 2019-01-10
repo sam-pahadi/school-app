@@ -1,0 +1,40 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"> <strong>Select Class</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <mat-radio-group>
+    <ul class="selectClassUl">
+      <li>
+        <mat-radio-button value="1"><div class="font">1</div>
+          <div class="clearfix detail">
+            <span>Boys: 18</span>
+            <span>Girls: 5</span>
+            <span>Total: 23</span>
+          </div></mat-radio-button>
+
+      </li>
+      <li>
+        <mat-radio-button value="2">
+          <div class="font">IV</div>
+          <div class="clearfix detail">
+            <span>Boys: 18</span>
+            <span>Girls: 5</span>
+            <span>Total: 23</span>
+          </div>
+        </mat-radio-button>
+      </li>
+    </ul>
+  </mat-radio-group>
+
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end" class="mat-dialog-actions">
+  <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+  <!--<span class="spacer"></span>-->
+  <button mat-raised-button class="dangerThemeBtn" (click)="openViewInquery()">Submit</button>
+</mat-dialog-actions>
+

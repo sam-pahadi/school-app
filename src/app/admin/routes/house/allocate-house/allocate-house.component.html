@@ -1,0 +1,158 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Allocate House</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <ul class="mainCardUl">
+        <li>Total Student: <span>1</span></li>
+        <li>House Allocated Student: <span>0</span></li>
+      </ul>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <form [formGroup]="searchForm">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput placeholder="Search.."
+                       autocomplete="off" formControlName="search" class="textUppercase"
+                       autocomplete="off"/>
+                <i class="fa fa-search" matSuffix></i>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <button mat-raised-button class="dangerThemeBtn pull-right" (click)="openAllocateHouseForm()">
+                Allocate House
+              </button>
+            </div>
+          </div>
+        </form>
+
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- rollNum -->
+                  <ng-container matColumnDef="rollNum">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Roll No.</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.rollNum}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- name -->
+                  <ng-container matColumnDef="name">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.name}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- gender -->
+                  <ng-container matColumnDef="gender">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Gender</mat-header-cell>
+                    <mat-cell *matCellDef="let element"> {{element.gender}}</mat-cell>
+                  </ng-container>
+
+                  <!--red -->
+                  <ng-container matColumnDef="red">
+                    <mat-header-cell *matHeaderCellDef> Red (0) </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!--yellow -->
+                  <ng-container matColumnDef="yellow">
+                    <mat-header-cell *matHeaderCellDef> Yellow (0) </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!--green -->
+                  <ng-container matColumnDef="green">
+                    <mat-header-cell *matHeaderCellDef> Green (0) </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!--pink -->
+                  <ng-container matColumnDef="pink">
+                    <mat-header-cell *matHeaderCellDef> Pink (0) </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!--white -->
+                  <ng-container matColumnDef="white">
+                    <mat-header-cell *matHeaderCellDef> White (0) </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!--black -->
+                  <ng-container matColumnDef="black">
+                    <mat-header-cell *matHeaderCellDef> Black (0) </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!--testh1 -->
+                  <ng-container matColumnDef="testh1">
+                    <mat-header-cell *matHeaderCellDef> Testh1 (0) </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!--brown -->
+                  <ng-container matColumnDef="brown">
+                    <mat-header-cell *matHeaderCellDef> Brown (0) </mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData != null && tempData.length === 0" class="nodataFound">No Information Available</p>
+                <div *ngIf="tempData == null" class="text-center"><img class="imageLoader img-responsive" src="assets/images/icons/loading-circles.gif"></div>
+              </div>
+
+              <mat-paginator [length]="100"
+                             [pageSize]="5"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </section>
+        </section>
+
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

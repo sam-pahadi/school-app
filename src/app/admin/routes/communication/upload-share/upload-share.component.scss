@@ -1,0 +1,72 @@
+.hoverbox{
+  padding-left: 0;
+  li{
+    list-style: none;
+    position: relative;
+    .icn{
+      cursor: pointer;
+      display: block;
+    }
+    .hoverIcon{
+      position: absolute;
+      top: 0;
+      right: 28px;
+      img{ height: 13px; width: 13px;}
+    }
+  }
+}
+
+.mat-table .mat-cell{
+  white-space: normal;
+  text-overflow: initial;
+  word-break: break-word; word-break: break-all;word-break: break-all;
+}
+.mat-cell:nth-child(1),
+.mat-header-cell:nth-child(1)
+{
+  flex: 0 0 12%;
+}
+.mat-header-cell:nth-child(2)
+{
+  flex: 0 0 20%;
+}
+.mat-cell:nth-child(2){
+  flex: 0 0 20%;
+}
+.mat-header-cell:nth-child(3)
+{
+  flex: 0 0 30%;
+}
+.mat-cell:nth-child(3){
+  flex: 0 0 30%;
+}
+
+.hoverbox {
+  cursor: default;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.hoverbox li {
+  background: #eee;
+  border-color: #ddd #bbb #aaa #ccc;
+  border-style: solid;
+  border-width: 1px;
+  color: inherit;
+  display: inline;
+  float: left;
+  margin: 3px;
+  padding: 5px;
+  position: relative;
+}
+.hoverbox img {
+  background: #fff;
+  border-color: #aaa #ccc #ddd #bbb;
+  border-style: none;
+  border-width: 1px;
+  color: inherit;
+  padding: 1px;
+  vertical-align: top;
+  width: 50px;
+  height: 50px;
+}

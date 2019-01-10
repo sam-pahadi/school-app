@@ -1,0 +1,91 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Subject Order</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <form [formGroup]="subjectOrderForm">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select placeholder="Select Std" formControlName="selectStd" multiple>
+                  <mat-select-trigger>
+                    {{subjectOrderForm.controls['selectStd'].value ?
+                    subjectOrderForm.controls['selectStd'].value[0] : ''}}
+                    <span *ngIf="subjectOrderForm.controls['selectStd'].value.length > 1"
+                          class="example-additional-selection">
+        (+{{subjectOrderForm.controls['selectStd'].value.length - 1}} others)
+      </span>
+                  </mat-select-trigger>
+                  <mat-option *ngFor="let selectStd of selectStdList" [value]="selectStd.key">{{selectStd.value}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+          </div>
+        </form>
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="table-responsive">
+                <table class="table table-sm table-bordered">
+                  <caption>
+                    <button mat-raised-button class="dangerThemeBtn customWidth">
+                      Update Report Settings
+                    </button>
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th>Subject Group</th>
+                      <th>Subject Group Order</th>
+                      <th>Subject</th>
+                      <th>Subject Order</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                       <td rowspan="2">UNASSIGNED	</td>
+                       <td rowspan="2">
+                         <mat-form-field>
+                           <mat-select placeholder="Select">
+                             <mat-option>1</mat-option>
+                             <mat-option>2</mat-option>
+                           </mat-select>
+                         </mat-form-field>
+                       </td>
+                       <td>Computer</td>
+                       <td>
+                         <mat-form-field>
+                           <mat-select placeholder="Select">
+                             <mat-option>1</mat-option>
+                             <mat-option>2</mat-option>
+                           </mat-select>
+                         </mat-form-field>
+                       </td>
+                     </tr>
+                     <tr>
+                       <td>Computer</td>
+                       <td>
+                         <mat-form-field>
+                           <mat-select>
+                             <mat-option>1</mat-option>
+                             <mat-option>2</mat-option>
+                           </mat-select>
+                         </mat-form-field>
+                       </td>
+                     </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+  </div>

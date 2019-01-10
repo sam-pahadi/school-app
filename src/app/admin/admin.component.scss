@@ -1,0 +1,28 @@
+@import "../../theme/variables";
+@import "../../assets/css/common";
+
+.pagePlaceHolder {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+}
+
+.mat-sidenav-content {
+  .pagePlaceHolder {
+    padding-bottom: 15px;
+  }
+}
+.matSideNave{
+  background: #fff;
+  border-right:0.5px solid $defaultBorder;
+  width: 270px;
+  .sidebarHeader{
+    border-bottom: 0.5px solid $defaultBorder;
+  }
+}
+.mat-drawer-container{
+  background-color: $bar;
+}

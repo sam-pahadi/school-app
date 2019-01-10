@@ -1,0 +1,617 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"> <strong>Create House</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <form [formGroup]="createFeeStructureForm" novalidate>
+    <div class="row">
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="Fee Structure Name" formControlName="feeStructureName" autocomplete="off">
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker1" placeholder="Valid From"
+                     formControlName="startDateRange" autocomplete="off">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker2" placeholder="Valid Upto"
+                     formControlName="endDateRange" autocomplete="off">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2 startView="year" [startAt]="endDate"></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+  </form>
+  <br>
+  <section class="mt-2">
+    <div class="">
+      <table class="table table-bordered">
+        <tbody>
+        <tr>
+          <th rowspan="2" align="center">Fee Heads</th>
+          <th rowspan="2" align="center">Total Amount</th>
+          <th align="right">Installment Dates
+            <br>
+            <mat-checkbox>Define Inst Name</mat-checkbox>
+
+          </th>
+          <th rowspan="2" align="center">Amount<br>[New Student]</th>
+          <th rowspan="2" align="center">Amount<br>[Old Student]</th>
+        </tr>
+        <tr>
+
+          <th>
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <div class="input-group-sm">
+                    <input type="text" class="field form-control-sm" placeholder="Name"
+                           value="Inst 1">
+                    <input
+                      type="text" class="form-control-sm hasDatepicker" placeholder="Date"></div>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </th>
+
+        </tr>
+
+        <tr>
+          <td>registration charge</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center">--</td>
+
+        </tr>
+
+        <tr>
+          <td>Admission Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Lab Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Term Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Adhhoc1</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Sports Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Security Deposite</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Daycare Additional</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Test</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Transport Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Computer Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Breakage</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Education Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Hostel Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>ad Fees</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Bus</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Admin</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Tution Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Gaana Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        <tr>
+          <td>Dance Fee</td>
+          <td align="center"><input class=" form-control-sm" type="text"
+                                    placeholder="Total Amount"></td>
+          <td align="left">
+            <table>
+              <tbody>
+              <tr>
+                <td>
+                  <input class="form-control-sm" type="text" placeholder="Amount">
+                  <input class="form-control-sm" type="text" placeholder="Inst Name" style="display: block;">
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </td>
+
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount">
+          </td>
+          <td align="center"><input class="form-control-sm"
+                                    readonly="readonly" type="text"
+                                    placeholder="Total Amount"></td>
+
+        </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <div class="col-md-12 col-12">
+          <button mat-raised-button class="dangerThemeBtn">Submit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end" class="mat-dialog-actions">
+  <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+  <!--<span class="spacer"></span>-->
+  <button mat-raised-button class="dangerThemeBtn">Submit</button>
+</mat-dialog-actions>
+

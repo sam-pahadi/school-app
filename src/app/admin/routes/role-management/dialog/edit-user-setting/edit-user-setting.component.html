@@ -1,0 +1,84 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"><strong>Update Details</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <form [formGroup]="updateForm" novalidate>
+    <div class="row">
+      <div class="col-lg-6 dashboardBoxL">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-select placeholder="Select Region" formControlName="region" multiple>
+                <mat-select-trigger>
+                  {{updateForm.controls['region'].value ?
+                  updateForm.controls['region'].value[0] : ''}}
+                  <span *ngIf="updateForm.controls['region'].value.length > 1"
+                        class="example-additional-selection">
+        (+{{updateForm.controls['region'].value.length - 1}} others)
+      </span>
+                </mat-select-trigger>
+                <mat-option *ngFor="let region of regionList" [value]="region.key">{{region.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBoxR">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-select placeholder="Select City" formControlName="city" multiple>
+                <mat-select-trigger>
+                  {{updateForm.controls['city'].value ?
+                  updateForm.controls['city'].value[0] : ''}}
+                  <span *ngIf="updateForm.controls['city'].value.length > 1"
+                        class="example-additional-selection">
+        (+{{updateForm.controls['city'].value.length - 1}} others)
+      </span>
+                </mat-select-trigger>
+                <mat-option *ngFor="let city of cityList" [value]="city.key">{{city.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+      <div class="col-lg-6 dashboardBoxL">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-select placeholder="Select Area" formControlName="area" multiple>
+                <mat-select-trigger>
+                  {{updateForm.controls['area'].value ?
+                  updateForm.controls['area'].value[0] : ''}}
+                  <span *ngIf="updateForm.controls['area'].value.length > 1"
+                        class="example-additional-selection">
+        (+{{updateForm.controls['area'].value.length - 1}} others)
+      </span>
+                </mat-select-trigger>
+                <mat-option *ngFor="let area of areaList" [value]="area.key">{{area.value}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+    </div>
+
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end" class="mat-dialog-actions">
+  <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+  <!--<span class="spacer"></span>-->
+  <button mat-raised-button class="dangerThemeBtn">Update</button>
+</mat-dialog-actions>
+
+
+

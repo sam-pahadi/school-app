@@ -1,0 +1,28 @@
+@import "../../../../../theme/variables";
+
+.dashboard_Box:first-child{padding-left: 0;}
+.dashboard_Box:last-child{padding-right: 0;}
+.browseList {
+  .browseListItem {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    .browseListItemPlaceholder {
+      background-color: #f4f4f4;
+      border-radius: 3px;
+      padding: 4px 8px;
+      img {
+        margin-right: 5px;
+        height: 14px;
+      }
+    }
+  }
+}
+.minBtn {
+  background: #333333;
+  border-radius: 48%;
+  color: #fff;
+  width: 31px;
+  height: 31px;
+  margin-left: 9px;
+}

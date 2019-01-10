@@ -1,0 +1,375 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">New Admission</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <ul class="mainCardUl">
+        <li>Board: <span>CBSE</span></li>
+        <li>Academic Year: <span>2017-2018 current (CURRENT)</span></li>
+      </ul>
+    </mat-card-content>
+  </app-shared-card>
+
+  <!--<form [formGroup]="admissionInqForm">-->
+    <!--<section class="mt-2 pageHeader_right sectionPadding">-->
+      <!--<mat-card class="marginBottom15 cardPanel no-padding">-->
+        <!--<mat-card-content class="matCardContent">-->
+          <!--<div class="row">-->
+            <!--<div class="col-md-3 col-sm-12 mt-2 dashboard_Box">-->
+              <!--<mat-form-field>-->
+                <!--<input type="text" matInput-->
+                       <!--placeholder="Inquiry Number" autocomplete="off"-->
+                       <!--formControlName="inquiryNum"/>-->
+              <!--</mat-form-field>-->
+            <!--</div>-->
+            <!--<div class="col-md-8 col-sm-12 mt-2 dashboard_Box">-->
+              <!--<button mat-raised-button class="dangerThemeBtn btnMarginRight">Get Details</button>-->
+              <!--<button mat-raised-button class="dangerThemeBtn" (click)="openSiblingInfo()">Get Sibling Details</button>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</mat-card-content>-->
+      <!--</mat-card>-->
+    <!--</section>-->
+    <!--</form>-->
+    <form [formGroup]="admissionForm">
+    <section>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-header class="matCardHeader">
+          Basic Information
+        </mat-card-header>
+        <mat-card-content class="matCardContent">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="First Name" autocomplete="off"
+                       formControlName="firstName"
+                        required/>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Blood Group" formControlName="bloodGroup">
+                  <mat-option *ngFor="let blood of bloodGroup" [value]="blood.key">
+                    {{ blood.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Region" autocomplete="off"
+                       formControlName="region"
+                       />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Birth State" required formControlName="state">
+                  <mat-option *ngFor="let state of states" [value]="state.key">
+                    {{ state.value }}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Inquiry Number" autocomplete="off"
+                       formControlName="inquiryNumber"
+                       />
+              </mat-form-field>
+
+              <label class="custLabel">Student Primary Address</label>
+              <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                <mat-button-toggle value="father">Father</mat-button-toggle>
+                <mat-button-toggle value="mother">Mother</mat-button-toggle>
+                <mat-button-toggle value="guardian">Guardian</mat-button-toggle>
+              </mat-button-toggle-group>
+
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Middle Name" autocomplete="off"
+                       formControlName="middleName"
+                        required/>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+              <mat-form-field class="example-full-width">
+                <input matInput [matDatepicker]="pickerDob" placeholder="My D.O.B"
+                       formControlName="pickerDob" required/>
+                <mat-error>Required Field</mat-error>
+                <mat-datepicker-toggle matSuffix [for]="pickerDob"></mat-datepicker-toggle>
+                <mat-datepicker #pickerDob></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Caste" autocomplete="off"
+                       formControlName="caste"
+                       />
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Birth City" autocomplete="off"
+                       formControlName="birthCity"
+                       />
+              </mat-form-field>
+              <label class="custLabel">Transport Required</label>
+              <mat-slide-toggle></mat-slide-toggle>
+
+              <mat-form-field>
+                <label style="width: 100%; font-size: 0">&nbsp;</label>
+                <input type="text" matInput
+                       placeholder="New Admission Date" autocomplete="off"
+                       formControlName="newAdmissionDate"
+                        required/>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Last Name" autocomplete="off"
+                       formControlName="lastName"
+                        required/>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Nationality" autocomplete="off"
+                       formControlName="nationality"
+                        required/>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Category" formControlName="category">
+                  <mat-option *ngFor="let category of categories" [value]="category.key">
+                    {{ category.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <!--<button mat-raised-button class="dangerThemeBtn" (click)="openClass()" style="margin-bottom: 1.2em;">Select Class</button>-->
+
+              <label class="custLabel">Any Physical Ailments/Allergies</label>
+              <mat-slide-toggle></mat-slide-toggle>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <label style="width: 100%;">Gender</label>
+              <mat-radio-group>
+                <mat-radio-button value="1" class="mr-1">Male</mat-radio-button>
+                <mat-radio-button value="2">Female</mat-radio-button>
+              </mat-radio-group>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Aadhar Number" autocomplete="off"
+                       formControlName="aadharNum"
+                       />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Birth Country" required formControlName="country">
+                  <mat-option *ngFor="let country of countries" [value]="country.key">
+                    {{ country.value }}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Parent Category" required formControlName="parentCategory">
+                  <mat-option *ngFor="let parentCategory of parentCategories" [value]="parentCategory.key">
+                    {{ parentCategory.value }}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+
+              <label style="width: 100%; font-size: 0;">&nbsp;</label>
+              <mat-checkbox>Is RTE Students</mat-checkbox>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+    <section>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-header class="matCardHeader">
+          Father Information
+        </mat-card-header>
+        <mat-card-content class="matCardContent">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="First Name" autocomplete="off"
+                       formControlName="commonFirstName"
+                        required/>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Qualification" autocomplete="off"
+                       formControlName="commonQualification"
+                        />
+              </mat-form-field>
+              <mat-form-field>
+                <mat-select placeholder="Annual Income" formControlName="annualIncome">
+                  <mat-option *ngFor="let income of annualIncome" [value]="income.key">
+                    {{ income.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Middle Name" autocomplete="off"
+                       formControlName="commonMiddletName"
+                        />
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Occupation" autocomplete="off"
+                       formControlName="commonOccupation"
+                        />
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="PAN No." autocomplete="off"
+                       formControlName="commonPanNum"
+                        />
+              </mat-form-field>
+
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Last Name" autocomplete="off"
+                       formControlName="commonLastName"
+                        required/>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Designation" autocomplete="off"
+                       formControlName="commonDesignation"
+                        />
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="National/State Number" autocomplete="off"
+                       formControlName="commonNationalNum"
+                        />
+              </mat-form-field>
+
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Nationality" autocomplete="off"
+                       formControlName="commonNationality"
+                        />
+              </mat-form-field>
+              <mat-form-field>
+                <input type="text" matInput
+                       placeholder="Organisation" autocomplete="off"
+                       formControlName="commonOrganisation"
+                        />
+              </mat-form-field>
+
+            </div>
+            </div>
+
+          <h4>Residential Address</h4>
+          <hr/>
+          <ng-container formGroupName="address">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Address Line 1" autocomplete="off"
+                         formControlName="commonAddressLineOne"
+                          required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-select placeholder="State" required formControlName="commonState">
+                    <mat-option *ngFor="let state of states" [value]="state.key">
+                      {{ state.value }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Phone Number" autocomplete="off"
+                         formControlName="commonPhoneNum"
+                          />
+                </mat-form-field>
+
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Address Line 2" autocomplete="off"
+                         formControlName="commonAddressLineTwo"
+                          />
+                </mat-form-field>
+                <mat-form-field>
+                <input type="text" matInput
+                       placeholder="City Name" autocomplete="off"
+                       formControlName="commonCityName"
+                        required/>
+                <mat-error>Required Field</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="email" matInput
+                         placeholder="Email" autocomplete="off"
+                         formControlName="commonEmailNum"
+                          />
+                </mat-form-field>
+
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Address Line 3" autocomplete="off"
+                         formControlName="commonAddressLineThree"
+                          />
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Pin Code" autocomplete="off"
+                         formControlName="commonPinCode"
+                          required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                <mat-select placeholder="Birth Country" required formControlName="commonCountry">
+                  <mat-option *ngFor="let country of countries" [value]="country.key">
+                    {{ country.value }}
+                  </mat-option>
+                </mat-select>
+                <mat-error>Required Field</mat-error>
+                  </mat-form-field>
+
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Mobile Number" autocomplete="off"
+                         formControlName="commonMobileNum"
+                          required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+
+              </div>
+            </div>
+            </ng-container>
+
+          </mat-card-content>
+        </mat-card>
+      </section>
+    <button mat-raised-button class="dangerThemeBtn">Submit</button>
+    <br><br/>
+
+  </form>
+
+</div>

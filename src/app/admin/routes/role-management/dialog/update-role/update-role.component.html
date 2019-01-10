@@ -1,0 +1,109 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"><strong>Add/Update Details</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <form [formGroup]="updateForm" novalidate (ngSubmit)="addRole(updateForm.value)">
+    <div class="row">
+      <div class="col-lg-6 dashboardBoxL">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="First Name" formControlName="firstName"
+                     autocomplete="off"  [(ngModel)]="data.firstName"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBoxR">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Last Name" formControlName="lastName"
+                     autocomplete="off" [(ngModel)]="data.lastName"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBoxL">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Email" formControlName="email"
+                     autocomplete="off" [(ngModel)]="data.email"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBoxR">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="password" formControlName="password"
+                     autocomplete="off" [(ngModel)]="data.password"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBoxL">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="tel" matInput placeholder="Contact Number" formControlName="contact"
+                     autocomplete="off" [(ngModel)]="data.contact"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBoxL">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="tel" matInput placeholder="Contact Number" formControlName="type"
+                     autocomplete="off" value="ADMIN" readonly/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-6 dashboardBoxL">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input matInput [matDatepicker]="picker2" placeholder="Valid upto"
+                     formControlName="valid_upto" [(ngModel)]="data.valid_upto" autocomplete="off" >
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2 startV iew="year" [startAt]="startDate"></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <!--<div class="col-lg-6 dashboardBoxR">-->
+        <!--<mat-grid-list cols="1" rowHeight="75px">-->
+          <!--<mat-grid-tile>-->
+            <!--<mat-form-field>-->
+              <!--<input matInput [matDatepicker]="picker2" placeholder="Valid Upto"-->
+                     <!--formControlName="valid_upto" autocomplete="off" >-->
+              <!--<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>-->
+              <!--<mat-datepicker #picker2 startV iew="year" [startAt]="endDate"></mat-datepicker>-->
+            <!--</mat-form-field>-->
+          <!--</mat-grid-tile>-->
+        <!--</mat-grid-list>-->
+      <!--</div>-->
+
+      <input type="hidden" formControlName="school_id" [(ngModel)]="school_id" />
+      <input type="hidden" formControlName="user_id" [(ngModel)]="user_id" />
+    </div>
+    <mat-dialog-actions align="end" class="mat-dialog-actions">
+      <!--<h6 class="mat-error errroMessage mt-2">Show error message</h6>-->
+      <!--<span class="spacer"></span>-->
+      <button mat-raised-button class="dangerThemeBtn">Update</button>
+    </mat-dialog-actions>
+  </form>
+</mat-dialog-content>
+
+
+
+
+

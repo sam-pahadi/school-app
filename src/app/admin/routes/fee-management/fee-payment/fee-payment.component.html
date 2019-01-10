@@ -1,0 +1,213 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Fee Payment</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <form [formGroup]="feePayment">
+    <section class="mt-2 pageHeader_right sectionPadding">
+
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <div class="row">
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select placeholder="Select Class" formControlName="className">
+                  <mat-option *ngFor="let classNme of className" [value]="classNme.key">
+                    {{ classNme.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select placeholder="Select Division" formControlName="division">
+                  <mat-option *ngFor="let div of division" [value]="div.key">
+                    {{ div.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <mat-select formControlName="gender" placeholder="Gender" required>
+                  <mat-option>Male</mat-option>
+                  <mat-option>Female</mat-option>
+                </mat-select>
+                <mat-error>Required Field</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 col-12 no-padding-both">
+              <button mat-raised-button class="dangerThemeBtn">Submit</button>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </form>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table class="" #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- grNum Column -->
+                  <ng-container matColumnDef="grNum">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> GR No.</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.grNum}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- studentName Column -->
+                  <ng-container matColumnDef="studentName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Student Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.studentName}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- class Column -->
+                  <ng-container matColumnDef="class">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Class</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.class}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- totalFees Column -->
+                  <ng-container matColumnDef="totalFees">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Total Fees</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.totalFees}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- paidTillDate Column -->
+                  <ng-container matColumnDef="paidTillDate">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Paid</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.paidTillDate}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- balance Column -->
+                  <ng-container matColumnDef="balance">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Balance</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.balance}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- dueToday Column -->
+                  <ng-container matColumnDef="dueToday">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Due</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.dueToday}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- lastPaidDate Column -->
+                  <ng-container matColumnDef="lastPaidDate">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Last Paid Date</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.lastPaidDate}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- otherTotalBill Column -->
+                  <ng-container matColumnDef="otherTotalBill">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Other Total Bill</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.otherTotalBill}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- otherTotalPaidBill Column -->
+                  <ng-container matColumnDef="otherTotalPaidBill">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Other Total Paid Bill</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      {{element.otherTotalPaidBill}}
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- raiseBill Column -->
+                  <ng-container matColumnDef="raiseBill">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Raise Bill</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <i class="material-icons fontAwesomeEditColor">
+                        payment
+                      </i>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- payNow Column -->
+                  <ng-container matColumnDef="payNow">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Pay Now</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <i class="material-icons fontAwesomeDeleteColor">
+                        payment
+                      </i>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- receipt Column -->
+                  <ng-container matColumnDef="receipt">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Receipt</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <i class="material-icons fontAwesomeSendColor">
+                        payment
+                      </i>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- refund Column -->
+                  <ng-container matColumnDef="refund">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Refund</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <i class="material-icons fontAwesomeSendColor">
+                        autorenew
+                      </i>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- sibling Column -->
+                  <ng-container matColumnDef="sibling">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Sibling</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      -
+                    </mat-cell>
+                  </ng-container>
+
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              </div>
+
+              <div class="row  clearfix">
+                <div class="col-lg-12 no-padding">
+                  <mat-paginator [length]="100"
+                                 [pageSize]="5"
+                                 [pageSizeOptions]="[5, 10, 25, 100]">
+                  </mat-paginator>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  </div>

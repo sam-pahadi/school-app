@@ -1,0 +1,93 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Due Report</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <form [formGroup]="dueReport">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <mat-select placeholder="Select Class" formControlName="className">
+                      <mat-option *ngFor="let classNme of className" [value]="classNme.key">
+                        {{ classNme.value }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn">Export to Excel</button>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn">Print</button>
+                </div>
+              </div>
+            </form>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="container">
+              <table class="table table-condensed"  id="myTable">
+                <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Class</th>
+                  <th>Total Fees (1113288 )</th>
+                  <th>Total Paid (483207)</th>
+                  <th>Balance (610124 )</th>
+                </tr>
+                </thead>
+                <tbody class="panel">
+                <tr data-toggle="collapse" data-target="#demo1" data-parent="#myTable">
+                  <td>
+                    <button mat-icon-button>
+                      <i class="material-icons fontAwesomeEditColor">add</i>
+                    </button>
+                  </td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr id="demo1" class="collapse">
+                  <td colspan="6" class="hiddenRow"><div>Demo1</div> </td>
+                </tr>
+                <tr data-toggle="collapse" data-target="#demo2" data-parent="#myTable">
+                  <td>
+                    <button mat-icon-button>
+                      <i class="material-icons fontAwesomeEditColor">add</i>
+                    </button>
+                  </td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr id="demo2" class="collapse">
+                  <td colspan="6" class="hiddenRow"><div>Demo2</div></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            </section>
+          </section>
+        </mat-card-content>
+      </mat-card>
+    </section>
+
+  </div>

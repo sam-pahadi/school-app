@@ -1,0 +1,154 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Fee Scheme</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                  <tr class="text-uppercase">
+                    <th>Scheme Name</th>
+                    <th>Valid From</th>
+                    <th>Valid Upto</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                  <tr>
+                    <td>Admission fee discount</td>
+                    <td>01/06/2017</td>
+                    <td>31/03/2018</td>
+                    <td>
+                      <button mat-icon-button matTooltip="Delete" matTooltipPosition="above">
+                        <i class="material-icons fontAwesomeDeleteColor">delete</i>
+                      </button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <form [formGroup]="feeScheme">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Fee Scheme Name" formControlName="feeSchemeName">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Purpose of Scheme" formControlName="purposeOfScheme">
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker1" placeholder="Valid From"
+                           formControlName="startDateRange" autocomplete="off">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker2" placeholder="Valid Upto"
+                           formControlName="endDateRange" autocomplete="off">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 startView="year" [startAt]="endDate"></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                </div>
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <mat-select placeholder="Select Class" formControlName="className">
+                      <mat-option *ngFor="let className of classNames" [value]="className.key">
+                        {{className}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <mat-select placeholder="Select category" formControlName="categoryName">
+                      <mat-option *ngFor="let category of categories" [value]="category">
+                        {{category}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </form>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                  <tr class="text-uppercase">
+                    <th>Fee Head</th>
+                    <th>Discount Type</th>
+                    <th>Discount Value</th>
+                    <th>Apply On</th>
+                  </tr>
+                  </thead>
+
+                  <tbody>
+                  <tr>
+                    <td>Registration charge</td>
+                    <td>
+                      <mat-button-toggle-group name="discountType" aria-label="Discount Type">
+                        <mat-button-toggle value="na">NA</mat-button-toggle>
+                        <mat-button-toggle value="flat">Flat</mat-button-toggle>
+                        <mat-button-toggle value="percentage">Percentage</mat-button-toggle>
+                      </mat-button-toggle-group>
+                    </td>
+                    <td>
+                      <input type="text" placeholder="Discount Value" class="form-control"/>
+                    </td>
+                    <td>
+                      <mat-button-toggle-group name="applyOn" aria-label="Apply on">
+                        <mat-button-toggle value="first">First Installment</mat-button-toggle>
+                        <mat-button-toggle value="all">All Installment</mat-button-toggle>
+                      </mat-button-toggle-group>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

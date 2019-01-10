@@ -1,0 +1,133 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Generate Roll Number</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>lorem</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section class="marginBottom15 mt-3">
+    <form class="example-form" [formGroup]="generateRollNum" novalidate>
+      <mat-card>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field>
+              <mat-select placeholder="Select Class" formControlName="className">
+                <mat-option *ngFor="let classNme of className" [value]="classNme.key">
+                  {{ classNme.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+            <mat-form-field>
+              <mat-select placeholder="Select Division" formControlName="division">
+                <mat-option *ngFor="let div of division" [value]="div.key">
+                  {{ div.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle value="manuallyGenerate">Manually Generate Roll No.</mat-button-toggle>
+              <mat-button-toggle value="autoGenerate">Auto Generate Roll No.</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle value="byFname">Assign Roll No. by First Name</mat-button-toggle>
+              <mat-button-toggle value="byLname">Assign Roll No. by Last Name</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 NoLeftPadding mt-3">
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle value="boy">Boy</mat-button-toggle>
+              <mat-button-toggle value="girl">Girl</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+
+          <div class="col-md-8 col-md-6 col-sm-6 col-xs-12 NoRightPadding mt-3">
+            <button mat-raised-button class="dangerThemeBtn customWidth pull-right" [disabled]="!generateRollNum.valid">Submit</button>
+            </div>
+
+        </div>
+      </mat-card>
+    </form>
+  </section>
+
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <form [formGroup]="searchForm">
+          <div class="row">
+            <div class="col-md-6 col-sm-12 mt-2 dashboard_Box">
+              <mat-form-field>
+                <input matInput placeholder="Search.."
+                       autocomplete="off" formControlName="search" class="textUppercase"
+                       autocomplete="off"/>
+                <i class="fa fa-search" matSuffix></i>
+              </mat-form-field>
+            </div>
+
+          </div>
+        </form>
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <div class="example-container mat-elevation-z8">
+              <div class="responsive_table">
+                <mat-table class="" #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                           matSortDirection="asc">
+
+                  <!-- studName Column -->
+                  <ng-container matColumnDef="studName">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Student Name</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div class="dangerColor">{{element.studName}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- gender Column -->
+                  <ng-container matColumnDef="gender">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Gender</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <div>{{element.gender}}</div>
+                    </mat-cell>
+                  </ng-container>
+
+                  <!-- rollNum Column -->
+                  <ng-container matColumnDef="rollNum">
+                    <mat-header-cell *matHeaderCellDef mat-sort-header> Roll No.</mat-header-cell>
+                    <mat-cell *matCellDef="let element">
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Roll Number">
+                      </mat-form-field>
+                    </mat-cell>
+                  </ng-container>
+
+                  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+                </mat-table>
+                <p *ngIf="tempData.length === 0" class="nodataFound">No Information Available</p>
+              </div>
+
+              <div class="row  clearfix">
+                <div class="col-lg-12 no-padding">
+                  <mat-paginator [length]="100"
+                                 [pageSize]="5"
+                                 [pageSizeOptions]="[5, 10, 25, 100]">
+                  </mat-paginator>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+</div>

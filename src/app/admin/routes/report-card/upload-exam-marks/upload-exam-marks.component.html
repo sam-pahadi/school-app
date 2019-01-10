@@ -1,0 +1,178 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Term</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+    </mat-card-content>
+  </app-shared-card>
+
+  <section class="marginBottom15 mt-3">
+    <form class="example-form" [formGroup]="examMarksForm" novalidate>
+      <mat-card>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field>
+              <mat-select placeholder="Select Std" formControlName="stdName" required>
+                <mat-option *ngFor="let std of stdName" [value]="std.key">
+                  {{ std.value }}
+                </mat-option>
+              </mat-select>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+            <mat-form-field>
+              <mat-select placeholder="Select Division" formControlName="division" required>
+                <mat-option *ngFor="let div of division" [value]="div.key">
+                  {{ div.value }}
+                </mat-option>
+              </mat-select>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <mat-form-field>
+              <mat-select placeholder="Select Term" formControlName="term" required>
+                <mat-option>term1</mat-option>
+              </mat-select>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoRightPadding">
+            <mat-form-field>
+              <mat-select placeholder="Select Exam" formControlName="exam" required>
+                <mat-option>Exam</mat-option>
+              </mat-select>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 NoLeftPadding">
+            <label>Exam Type:</label>&nbsp;
+            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+              <mat-button-toggle value="written">Written</mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+        </div>
+      </mat-card>
+    </form>
+    <br>
+    <div class="row">
+      <div class="col col-lg-8 col-md-8 col-sm-12 NoLeftPadding">
+        <p><code class="text-danger">
+          PNRC:Principal Negative Remark Count TPRC:Teacher Positive Remark Count TNRC:Teacher Negative Remark Count
+        </code></p>
+      </div>
+      <div class="col col-lg-4 colmd-4 col-sm-12 NoRightPadding">
+        <button mat-raised-button class="dangerThemeBtn customWidth pull-right">
+          Download Excel
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div align="center" style="width: 100%; overflow: auto;" class="table-responsive">
+      <!-- <section class=""> -->
+      <!-- <div class="container"> -->
+      <table id="stage" class="list_table">
+        <thead class="list_header">
+        <tr class="header">
+          <th align="center">Roll No</th>
+          <th align="center">Student Name&nbsp;&nbsp;&nbsp;</th>
+          <th class="small_text_box" align="center">
+            ENGLISH&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="0.0"
+                                                                                      class="text_align_right small">&nbsp;&nbsp;<input
+            type="text" value="0.0" class="text_align_right small">&nbsp;&nbsp;<input
+            type="checkbox" value="on"></th>
+          <th class="small_text_box" align="center">HINDI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+            type="text" value="0.0" class="text_align_right small">&nbsp;&nbsp;<input type="text"
+                                                                                      value="0.0"
+                                                                                      class="text_align_right small">&nbsp;&nbsp;<input
+            type="checkbox" value="on"></th>
+          <th class="small_text_box" align="center">MATHS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+            type="text" value="0.0" class="text_align_right small">&nbsp;&nbsp;<input type="text" value="0.0"
+                                                                                      class="text_align_right small">&nbsp;&nbsp;<input
+            type="checkbox" value="on"></th>
+          <th class="small_text_box" align="center">SCIENCES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+            type="text" value="0.0" class="text_align_right small">&nbsp;&nbsp;<input type="text"
+                                                                                                        value="0.0"
+                                                                                                        class="text_align_right small">&nbsp;&nbsp;<input
+            type="checkbox" value="on"></th>
+          <th class="small_text_box" align="center">
+            HISTORY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" value="0.0"
+                                                                                      class="text_align_right small">&nbsp;&nbsp;<input
+            type="text" value="0.0" class="text_align_right small">&nbsp;&nbsp;<input
+            type="checkbox" value="on"></th>
+          <th class="small_text_box" align="center">COMPUTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
+            type="text" value="0.0"
+            class="text_align_right small">&nbsp;&nbsp;<input type="text" value="0.0" class="text_align_right small">&nbsp;&nbsp;<input
+            type="checkbox" value="on"></th>
+          <th align="center">Exam Mark
+            <div class="subject_item_content"><input type="text" value="0.0"
+                                                     class="text_align_right small"></div>
+          </th>
+          <th align="center">Percentage</th>
+          <th align="center">Grade</th>
+          <th align="center">Teacher Comments</th>
+          <th align="center">Rating</th>
+          <th align="center">Attendance
+            <div class="subject_item_content"><input type="text" value="0"
+                                                     class="text_align_right small"></div>
+          </th>
+          <th align="center">PNRC</th>
+          <th align="center">TPRC</th>
+          <th align="center">TNRC</th>
+          <th align="center">Result Status</th>
+          <th align="center">Conduct</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="351968">
+          <td align="center">&nbsp;&nbsp;<input type="checkbox"></td>
+          <td align="left">Payal nitin jagtap<input type="hidden"></td>
+          <td align="center">NA</td>
+          <td align="center">NA</td>
+          <td align="center">NA</td>
+          <td align="center">NA</td>
+          <td align="center">NA</td>
+          <td align="center">NA</td>
+          <td title="Payal jagtap" align="center"><input type="text" class="text_align_right small" readonly="readonly">
+          </td>
+          <td title="Payal jagtap" align="center"><input type="text" readonly="readonly" class="text_align_right small">
+          </td>
+          <td title="Payal jagtap" align="center"><input type="text" readonly="readonly" class="small"></td>
+          <td title="Payal jagtap" align="center"><input type="text" class="small"><img
+            src="/RubixTotal/resources/images/openpopup.png" alt="Open Comment Box" title="Open Comment Box"
+            style="margin:0px 10px -4px 10px;"></td>
+          <td title="Payal jagtap" align="center">
+            <div class="small" style="white-space: nowrap; cursor: pointer;"><input type="hidden">
+              ---
+            </div>
+          </td>
+          <td title="Payal jagtap" align="center"><input type="text" class="text_align_right small"></td>
+          <td title="Payal jagtap" align="center"><input type="text" class="small"></td>
+          <td title="Payal jagtap" align="center"><input type="text" class="small"></td>
+          <td title="Payal jagtap" align="center"><input type="text" class="small"></td>
+          <td title="Payal jagtap" align="center">
+            <select>
+              <option value="Pass" selected="">Pass</option>
+              <option value="Detained">Detained</option>
+              <option value="Promoted">Promoted</option>
+            </select>
+          </td>
+          <td title="Payal jagtap" align="center"><select>
+            <option value="Good" selected="">Good</option>
+            <option value="Bad">Bad</option>
+          </select></td>
+        </tr>
+        </tbody>
+        <tbody></tbody>
+      </table>
+      <!--  </div> -->
+      <!-- </section> -->
+    </div>
+  </section>
+</div>

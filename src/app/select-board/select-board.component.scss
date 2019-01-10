@@ -1,0 +1,28 @@
+@import "../../theme/variables";
+
+.login-page {
+  padding: 10% 0 0;
+  margin: auto;
+}
+.form {min-height: 364px;
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  width: 464px;overflow-y: auto;
+  max-width: 90%;
+  margin: 0 auto 100px;
+  padding: 45px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+.example-radio-group {
+  display: inherit;
+  margin-top: 1em;
+}
+
+.example-radio-button {
+  margin: 5px;
+}
+
+.example-selected-value {
+  margin: 15px 0;
+}

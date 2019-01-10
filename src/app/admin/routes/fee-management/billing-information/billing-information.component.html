@@ -1,0 +1,379 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Billing Information</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <form [formGroup]="billingInfo">
+    <section class="mt-2 pageHeader_right sectionPadding">
+
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <h4>Firm Details</h4>
+          <hr/>
+          <ng-container formGroupName="firmDetail">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Firm Name" autocomplete="off"
+                         formControlName="firmName" required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-8 col-sm-12 mt-2 dashboard_Box">
+                <div class="file-field">
+                  <div class="btn btn-default btn-sm float-left">
+                    <input type="file">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <h4>Contact Details</h4>
+          <hr/>
+          <ng-container formGroupName="contactDetails">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="First Name" autocomplete="off"
+                         formControlName="firstName"
+                         required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="email" matInput
+                         placeholder="Email Id" autocomplete="off"
+                         formControlName="emailId"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Last Name" autocomplete="off"
+                         formControlName="lastName"
+                         required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Mobile Number" autocomplete="off"
+                         formControlName="primaryNum" required
+                  />
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Landline Number" autocomplete="off"
+                         formControlName="secondaryNum"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <ng-container formGroupName="contactDetails">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="First Name" autocomplete="off"
+                         formControlName="firstName"
+                         required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="email" matInput
+                         placeholder="Email Id" autocomplete="off"
+                         formControlName="emailId"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Last Name" autocomplete="off"
+                         formControlName="lastName"
+                         required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Mobile Number" autocomplete="off"
+                         formControlName="primaryNum" required
+                  />
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Landline Number" autocomplete="off"
+                         formControlName="secondaryNum"
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+          </ng-container>
+          <h4>Permanent Address</h4>
+          <hr/>
+          <ng-container formGroupName="permanentAddress">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Address Line 1" autocomplete="off"
+                         formControlName="commonAddressLineOne"
+                         required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="City" autocomplete="off"
+                         formControlName="city"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Address Line 2" autocomplete="off"
+                         formControlName="commonAddressLineTwo"
+                  />
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Pin Code" autocomplete="off"
+                         formControlName="commonPinCode"
+                         required/>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <mat-select placeholder="Country" required formControlName="commonCountry">
+                    <mat-option *ngFor="let country of countries" [value]="country.key">
+                      {{ country.value }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <mat-select placeholder="State" required formControlName="state">
+                    <mat-option *ngFor="let state of states" [value]="state.key">
+                      {{ state.value }}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error>Required Field</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <h4>Local Address</h4>
+          <mat-checkbox>Address same as Permanent address</mat-checkbox>
+          <hr/>
+          <ng-container formGroupName="localAddress">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Address Line 1" autocomplete="off"
+                         formControlName="commonAddressLineOne"/>
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="City" autocomplete="off"
+                         formControlName="city"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Address Line 2" autocomplete="off"
+                         formControlName="commonAddressLineTwo"
+                  />
+                </mat-form-field>
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Pin Code" autocomplete="off"
+                         formControlName="commonPinCode"/>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <mat-select placeholder="Country" formControlName="commonCountry">
+                    <mat-option *ngFor="let country of countries" [value]="country.key">
+                      {{ country.value }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <mat-select placeholder="State" formControlName="state">
+                    <mat-option *ngFor="let state of states" [value]="state.key">
+                      {{ state.value }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <h4>Bank Account Details</h4>
+          <hr/>
+          <ng-container formGroupName="bankAccountDetails">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Account No." autocomplete="off"
+                         formControlName="accountNum"/>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="IFSC Code" autocomplete="off"
+                         formControlName="IFSC_code"/>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="MICR Code" autocomplete="off"
+                         formControlName="MICR_code"/>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box"></div>
+            </div>
+          </ng-container>
+        </mat-card-content>
+      </mat-card>
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <h4>Legal Information</h4>
+          <hr/>
+          <ng-container formGroupName="legalInfo">
+            <div class="row">
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="Shop License Number." autocomplete="off"
+                         formControlName="shopLicenseNum"/>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="PAN No." autocomplete="off"
+                         formControlName="PAN_num"/>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                <mat-form-field>
+                  <input type="text" matInput
+                         placeholder="TIN No." autocomplete="off"
+                         formControlName="TIN_num"/>
+                </mat-form-field>
+              </div>
+              <div class="col-md-3 col-sm-12 mt-2 dashboard_Box"></div>
+            </div>
+          </ng-container>
+        </mat-card-content>
+        <mat-card-actions class="matCardContent">
+          <div class="row">
+            <div class="col-md-12 col-12">
+              <button mat-raised-button class="dangerThemeBtn">Submit</button>
+            </div>
+          </div>
+        </mat-card-actions>
+      </mat-card>
+
+
+    </section>
+
+  </form>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="pageHeader_right sectionPadding mt-2">
+          <div class="table-responsive">
+            <table id="examtable" class="table table-bordered table-striped">
+              <thead>
+              <tr>
+                <th>Firm Name</th>
+                <th>Owner Name</th>
+                <th>Local Address</th>
+                <th>Permanent Address</th>
+                <th>Contact</th>
+                <th>Shop License Number</th>
+                <th>Product Id</th>
+                <th>Merchant Id</th>
+                <th>Upload Vendor Logo</th>
+                <th>Is School Vendor</th>
+                <th>Update</th>
+                <th>Status</th>
+              </tr>
+              </thead>
+              <tbody>
+
+              <tr>
+                <td>Utsav International School,,,</td>
+                <td>Utsav International</td>
+                <td>Pune Pune ,Pune ,MAHARASHTRA ,INDIA ,411040</td>
+                <td>Pune Pune Pune, MAHARASHTRA, INDIA, 411040</td>
+                <td>0123456789</td>
+                <td></td>
+                <td>RUBIX</td>
+                <td>28840</td>
+                <td>Image Uploaded</td>
+                <td>YES</td>
+                <td align="center">
+                  <button mat-icon-button matTooltip="Edit" matTooltipPosition="above">
+                    <i class="material-icons fontAwesomeEditColor">edit</i>
+                  </button>
+                </td>
+
+                <td align="center">
+                  <mat-slide-toggle></mat-slide-toggle>
+                </td>
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

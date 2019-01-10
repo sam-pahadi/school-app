@@ -1,0 +1,365 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Head Wise Fee Report</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p></p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section>
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <section class="mt-2">
+          <section class="pageHeader_right sectionPadding">
+            <form [formGroup]="feeCollectionReport">
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker1" placeholder="Valid From"
+                           formControlName="startDateRange" autocomplete="off">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <mat-form-field>
+                    <input matInput [matDatepicker]="picker2" placeholder="Valid Upto"
+                           formControlName="endDateRange" autocomplete="off">
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 startView="year" [startAt]="endDate"></mat-datepicker>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn">View Daily Collection Report</button>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn">Print</button>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <button mat-raised-button class="dangerThemeBtn">Excel Export</button>
+                </div>
+                <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+                  <label>display date here</label>
+                </div>
+              </div>
+            </form>
+          </section>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+
+  <section class="mt-2 pageHeader_right sectionPadding">
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <div class="example-container mat-elevation-z8">
+          <div class="responsive_table">
+            <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                       matSortDirection="asc">
+
+              <!-- name -->
+              <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}}
+                </mat-cell>
+              </ng-container>
+
+              <!--class -->
+              <ng-container matColumnDef="class">
+                <mat-header-cell *matHeaderCellDef> Class(Div)</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.class}}
+                </mat-cell>
+              </ng-container>
+
+              <!--receiptNum -->
+              <ng-container matColumnDef="receiptNum">
+                <mat-header-cell *matHeaderCellDef> Receipt No.</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.receiptNum}}
+                </mat-cell>
+              </ng-container>
+
+              <!--regCharge -->
+              <ng-container matColumnDef="regCharge">
+                <mat-header-cell *matHeaderCellDef> Registration Charge</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.regCharge}}
+                </mat-cell>
+              </ng-container>
+
+              <!--admissionFees -->
+              <ng-container matColumnDef="admissionFees">
+                <mat-header-cell *matHeaderCellDef> Admission Fees</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.admissionFees}}
+                </mat-cell>
+              </ng-container>
+
+              <!--labFee -->
+              <ng-container matColumnDef="labFee">
+                <mat-header-cell *matHeaderCellDef> Lab Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.labFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--receiptType -->
+              <ng-container matColumnDef="receiptType">
+                <mat-header-cell *matHeaderCellDef> Receipt Type</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.receiptType}}
+                </mat-cell>
+              </ng-container>
+
+              <!--termFee -->
+              <ng-container matColumnDef="termFee">
+                <mat-header-cell *matHeaderCellDef> Term Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.termFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--adhhoc -->
+              <ng-container matColumnDef="adhhoc">
+                <mat-header-cell *matHeaderCellDef> Adhhoc1</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.adhhoc}}
+                </mat-cell>
+              </ng-container>
+
+              <!--sportsFee -->
+              <ng-container matColumnDef="sportsFee">
+                <mat-header-cell *matHeaderCellDef> Sports Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.sportsFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--securityDeposit -->
+              <ng-container matColumnDef="securityDeposit">
+                <mat-header-cell *matHeaderCellDef> Security Deposit</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.securityDeposit}}
+                </mat-cell>
+              </ng-container>
+
+              <!--daycareAdditional -->
+              <ng-container matColumnDef="daycareAdditional">
+                <mat-header-cell *matHeaderCellDef> Daycare Additional</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.daycareAdditional}}
+                </mat-cell>
+              </ng-container>
+
+              <!--test -->
+              <ng-container matColumnDef="test">
+                <mat-header-cell *matHeaderCellDef> Test</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.test}}
+                </mat-cell>
+              </ng-container>
+
+              <!--transportFee -->
+              <ng-container matColumnDef="transportFee">
+                <mat-header-cell *matHeaderCellDef> Transport Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.transportFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--transport -->
+              <ng-container matColumnDef="transport">
+                <mat-header-cell *matHeaderCellDef> Transport</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.transport}}
+                </mat-cell>
+              </ng-container>
+
+              <!--computerFee -->
+              <ng-container matColumnDef="computerFee">
+                <mat-header-cell *matHeaderCellDef> Computer Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.computerFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--breakage -->
+              <ng-container matColumnDef="breakage">
+                <mat-header-cell *matHeaderCellDef> Breakage</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.breakage}}
+                </mat-cell>
+              </ng-container>
+
+              <!--educationFee -->
+              <ng-container matColumnDef="educationFee">
+                <mat-header-cell *matHeaderCellDef> Education Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.educationFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--hostelFee -->
+              <ng-container matColumnDef="hostelFee">
+                <mat-header-cell *matHeaderCellDef> Hostel Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.hostelFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--addFees -->
+              <ng-container matColumnDef="addFees">
+                <mat-header-cell *matHeaderCellDef> ad Fees</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.addFees}}
+                </mat-cell>
+              </ng-container>
+
+              <!--transportFare -->
+              <ng-container matColumnDef="transportFare">
+                <mat-header-cell *matHeaderCellDef> Transport Fare</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.transportFare}}
+                </mat-cell>
+              </ng-container>
+
+              <!--bus -->
+              <ng-container matColumnDef="bus">
+                <mat-header-cell *matHeaderCellDef> Bus</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.bus}}
+                </mat-cell>
+              </ng-container>
+
+              <!--admin -->
+              <ng-container matColumnDef="admin">
+                <mat-header-cell *matHeaderCellDef> Admin</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.admin}}
+                </mat-cell>
+              </ng-container>
+
+              <!--others -->
+              <ng-container matColumnDef="others">
+                <mat-header-cell *matHeaderCellDef> Others</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.others}}
+                </mat-cell>
+              </ng-container>
+
+              <!--abacus -->
+              <ng-container matColumnDef="abacus">
+                <mat-header-cell *matHeaderCellDef> Abacus</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.abacus}}
+                </mat-cell>
+              </ng-container>
+
+              <!--tuitionFee -->
+              <ng-container matColumnDef="tuitionFee">
+                <mat-header-cell *matHeaderCellDef> Tuition Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.tuitionFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--gaanaFees -->
+              <ng-container matColumnDef="gaanaFees">
+                <mat-header-cell *matHeaderCellDef> Gaana Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.gaanaFees}}
+                </mat-cell>
+              </ng-container>
+
+              <!--danceFees -->
+              <ng-container matColumnDef="danceFees">
+                <mat-header-cell *matHeaderCellDef> Dance Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.danceFees}}
+                </mat-cell>
+              </ng-container>
+
+              <!--discount -->
+              <ng-container matColumnDef="discount">
+                <mat-header-cell *matHeaderCellDef> Discount</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.discount}}
+                </mat-cell>
+              </ng-container>
+
+              <!--lateFee -->
+              <ng-container matColumnDef="lateFee">
+                <mat-header-cell *matHeaderCellDef> Late Fee</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.lateFee}}
+                </mat-cell>
+              </ng-container>
+
+              <!--receiptDate -->
+              <ng-container matColumnDef="receiptDate">
+                <mat-header-cell *matHeaderCellDef> Receipt Date</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.receiptDate}}
+                </mat-cell>
+              </ng-container>
+
+              <!--paymentMode -->
+              <ng-container matColumnDef="paymentMode">
+                <mat-header-cell *matHeaderCellDef> Payment Mode</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.paymentMode}}
+                </mat-cell>
+              </ng-container>
+
+              <!--cheque -->
+              <ng-container matColumnDef="cheque">
+                <mat-header-cell *matHeaderCellDef> Cheque/Challan/Ref. No.</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.cheque}}
+                </mat-cell>
+              </ng-container>
+
+              <!--installmentName -->
+              <ng-container matColumnDef="installmentName">
+                <mat-header-cell *matHeaderCellDef> Installment Name</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.installmentName}}
+                </mat-cell>
+              </ng-container>
+
+
+              <!--totalReceivedAmount -->
+              <ng-container matColumnDef="totalReceivedAmount">
+                <mat-header-cell *matHeaderCellDef> Total Received Amount</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.totalReceivedAmount}}
+                </mat-cell>
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <p *ngIf="tempData != null && tempData.length === 0" class="nodataFound">No Information Available</p>
+            <div *ngIf="tempData == null" class="text-center"><img class="imageLoader img-responsive"
+                                                                   src="assets/images/icons/loading-circles.gif"></div>
+          </div>
+
+          <div class="row  clearfix">
+            <div class="col-lg-12 no-padding">
+              <mat-paginator [length]="100"
+                             [pageSize]="5"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

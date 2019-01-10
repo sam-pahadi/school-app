@@ -1,0 +1,82 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">House Report</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>lorem</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <section class="mt-2 pageHeader_right sectionPadding">
+    <mat-card class="marginBottom15 cardPanel no-padding">
+      <mat-card-content class="matCardContent">
+        <div class="example-container mat-elevation-z8">
+          <div class="responsive_table">
+            <mat-table #table [dataSource]="dataSource" matSort matSortDisableClear="true"
+                       matSortDirection="asc">
+
+              <!-- rollNum -->
+              <ng-container matColumnDef="rollNum">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Roll No.</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.rollNum}}
+                </mat-cell>
+              </ng-container>
+
+              <!-- name -->
+              <ng-container matColumnDef="name">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Name</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.name}}
+                </mat-cell>
+              </ng-container>
+
+              <!-- gender -->
+              <ng-container matColumnDef="gender">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Gender</mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.gender}}</mat-cell>
+              </ng-container>
+
+              <!--class -->
+              <ng-container matColumnDef="class">
+                <mat-header-cell *matHeaderCellDef> Class</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.class}}
+                </mat-cell>
+              </ng-container>
+
+              <!--division -->
+              <ng-container matColumnDef="division">
+                <mat-header-cell *matHeaderCellDef> Division</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.division}}
+                </mat-cell>
+              </ng-container>
+
+              <!--house -->
+              <ng-container matColumnDef="house">
+                <mat-header-cell *matHeaderCellDef> House</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{element.house}}
+                </mat-cell>
+              </ng-container>
+
+              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+            </mat-table>
+            <p *ngIf="tempData != null && tempData.length === 0" class="nodataFound">No Information Available</p>
+            <div *ngIf="tempData == null" class="text-center"><img class="imageLoader img-responsive"
+                                                               src="assets/images/icons/loading-circles.gif"></div>
+          </div>
+
+          <div class="row  clearfix">
+            <div class="col-lg-12 no-padding">
+              <mat-paginator [length]="100"
+                             [pageSize]="5"
+                             [pageSizeOptions]="[5, 10, 25, 100]">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </section>
+
+</div>

@@ -1,0 +1,107 @@
+<div [@routerTransition] class="padding15">
+  <app-shared-card [image]="'assets/images/card-icon/setting.svg'">
+    <mat-card-subtitle class="mat-card-subtitle">Upload Marks</mat-card-subtitle>
+    <mat-card-content class="mat-card-content">
+      <p>qwertyuiop</p>
+    </mat-card-content>
+  </app-shared-card>
+
+  <form [formGroup]="uploadMarks">
+    <section class="mt-2 pageHeader_right sectionPadding">
+      <mat-card class="marginBottom15 cardPanel no-padding">
+        <mat-card-content class="matCardContent">
+          <div class="row">
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field>
+                <mat-select placeholder="STD." formControlName="selectStd">
+                  <mat-option *ngFor="let std of selectStd" [value]="std.key">
+                    {{ std.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field>
+                <mat-select placeholder="Div" formControlName="division">
+                  <mat-option *ngFor="let div of division" [value]="div.key">
+                    {{ div.value }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-12 dashboardBox" style="display: flex;">
+              <input type="file" #file style="display: none;" #uploadButton>
+              <button mat-raised-button class="dangerHollowThemeBtn mr-2" >Choose File
+              </button>
+
+              <div class="browseList btnMarginRight">
+                <div class="browseListItem">
+                  <div class="browseListItemPlaceholder">
+                    <img src="assets/images/attachSmBlack.png" alt="">
+                    <span class="browseListItemFileName">file name</span>
+                  </div>
+                  <button class="minBtn pointer" title="Delete"><i class="fa fa-trash"></i></button>
+                </div>
+              </div>
+              <button mat-raised-button class="dangerThemeBtn">Upload Excel</button>
+            </div>
+          </div>
+
+          <hr/>
+
+          <div class="row">
+            <div class="col col-md-12"><h6>Detail Information</h6></div>
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field class="example-full-width">
+                <input type="text" matInput placeholder="Test Code" formControlName="testCode"
+                       autocomplete="off"/>
+              </mat-form-field>
+            </div>
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker1" placeholder="Test Date"
+                       formControlName="startDateRange" autocomplete="off">
+                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                <mat-datepicker #picker1 startView="year" [startAt]="startDate"></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field class="example-full-width">
+                <input type="text" matInput placeholder="Note" formControlName="note"
+                       autocomplete="off"/>
+              </mat-form-field>
+            </div>
+            <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12 dashboardBox">
+              <mat-form-field>
+                <input matInput [matDatepicker]="picker2" placeholder="Test Expiry Date"
+                       formControlName="endDateRange" autocomplete="off">
+                <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                <mat-datepicker #picker2 startV iew="year" [startAt]="endDate"></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </div>
+
+          <hr/>
+
+          <div class="row">
+            <div class="col col-md-12">
+              <h6>Subject And Total Marks</h6>
+            </div>
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12 dashboardBox">
+                <mat-chip-list>
+                  <mat-chip>ECO
+                    <mat-icon matChipRemove>cancel</mat-icon>
+                  </mat-chip>
+                </mat-chip-list>
+            </div>
+
+            <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12 dashboardBox clearfix"><br>
+            <button mat-raised-button class="dangerThemeBtn">Download</button>
+            </div>
+          </div>
+
+        </mat-card-content>
+      </mat-card>
+    </section>
+  </form>
+</div>

@@ -1,0 +1,242 @@
+<!--modal-->
+<h1 mat-dialog-title class="font15 mb-3"><strong>Add Driver</strong>
+  <span (click)="closeDilogue()" class="pull-right" title="Close">
+        <img src="assets/images/icons/clear_black.svg" alt="close" class="width17 img-responsive">
+</span>
+</h1>
+<mat-dialog-content>
+  <form [formGroup]="addDetailForm" novalidate (ngSubmit)="addDriver(addDetailForm.value)">
+    <div class="row">
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="First Name" formControlName="firstName"
+                     autocomplete="off" required [(ngModel)]="data.firstName"/>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input type="text" matInput placeholder="Last Name" formControlName="lastName"
+                     autocomplete="off" required [(ngModel)]="data.lastName"/>
+              <mat-error>Required Field</mat-error>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <label style="width: 100%;">Gender</label>
+            <mat-radio-group style="display: flex;" formControlName="gender" [(ngModel)]="data.gender">
+              <mat-radio-button value="M" class="mr-1">Male</mat-radio-button>
+              <mat-radio-button value="F">Female</mat-radio-button>
+            </mat-radio-group>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field class="example-full-width">
+              <input matInput [matDatepicker]="pickerDob" placeholder="My D.O.B"
+                     formControlName="dob" required [(ngModel)]="data.dob"/>
+              <mat-error>Required Field</mat-error>
+              <mat-datepicker-toggle matSuffix [for]="pickerDob"></mat-datepicker-toggle>
+              <mat-datepicker #pickerDob></mat-datepicker>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+            <mat-select placeholder="Category" formControlName="category" [(ngModel)]="data.category">
+              <mat-option *ngFor="let category of categories" [value]="category.key">
+                {{ category.value }}
+              </mat-option>
+            </mat-select>
+              </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+            <mat-select placeholder="Marital Status" formControlName="maritial_status" [(ngModel)]="data.maritial_status">
+              <mat-option>Divorced</mat-option>
+              <mat-option>Married</mat-option>
+            </mat-select>
+              </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <label style="width: 100%;">Is Physically Challenged</label>
+            <mat-radio-group style="display: flex;"  formControlName="physically_challenged" [(ngModel)]="data.physically_challenged">
+              <mat-radio-button value="Yes" class="mr-1">Yes</mat-radio-button>
+              <mat-radio-button value="No">No</mat-radio-button>
+            </mat-radio-group>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <!--<div class="col-lg-4 dashboardBox">-->
+        <!--<mat-grid-list cols="1" rowHeight="75px">-->
+          <!--<mat-grid-tile>-->
+            <!--<mat-form-field>-->
+            <!--<input type="text" matInput placeholder="References If Any " formControlName="reference"-->
+                   <!--autocomplete="off"/>-->
+              <!--</mat-form-field>-->
+          <!--</mat-grid-tile>-->
+        <!--</mat-grid-list>-->
+      <!--</div>-->
+      </div>
+
+    <div class="row">
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Email" formControlName="email"
+                     autocomplete="off" required [(ngModel)]="data.email"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <input type="text" matInput placeholder="Password" formControlName="password"
+                     autocomplete="off" required [(ngModel)]="data.password"/>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+      <div class="col-lg-4 dashboardBox">
+        <mat-grid-list cols="1" rowHeight="75px">
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-select placeholder="Type" formControlName="type" [(ngModel)]="data.type">
+                <mat-option value="driver">Driver</mat-option>
+                <mat-option value="conductor">Conductor</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div>
+    <hr/>
+    <h6>Address</h6>
+    <ng-container formGroupName="address">
+      <div class="row">
+        <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="Address Line 1" autocomplete="off"
+                   formControlName="address_1" [(ngModel)]="data.address_1"
+                   autocomplete="off" required/>
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="State Name" autocomplete="off"
+                   formControlName="state" [(ngModel)]="data.state"
+                   autocomplete="off" required/>
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+          <!--<mat-form-field>-->
+            <!--<input type="text" matInput-->
+                   <!--placeholder="Phone Number" autocomplete="off"-->
+                   <!--formControlName="commonPhoneNum"-->
+                   <!--autocomplete="off" />-->
+          <!--</mat-form-field>-->
+
+        </div>
+        <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="Address Line 2" autocomplete="off"
+                   formControlName="address_2"  [(ngModel)]="data.address_2"
+                   autocomplete="off" />
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="City Name" autocomplete="off"
+                   formControlName="city"  [(ngModel)]="data.city"
+                   autocomplete="off" required/>
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+          <!--<mat-form-field>-->
+            <!--<input type="email" matInput-->
+                   <!--placeholder="Email" autocomplete="off"-->
+                   <!--formControlName="commonEmailNum"-->
+                   <!--autocomplete="off" />-->
+          <!--</mat-form-field>-->
+
+        </div>
+        <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="Address Line 3" autocomplete="off"
+                   formControlName="address_1" [(ngModel)]="data.address_1"
+                   autocomplete="off" />
+          </mat-form-field>
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="Pin Code" autocomplete="off"
+                   formControlName="pin_code" [(ngModel)]="data.pin_code"
+                   autocomplete="off" required/>
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+
+        </div>
+        <div class="col-md-3 col-sm-12 mt-2 dashboard_Box">
+          <mat-form-field>
+            <input type="text" matInput
+                   placeholder="Country" value="INDIA" autocomplete="off"
+                   formControlName="country" [(ngModel)]="data.country"
+                   autocomplete="off" required readonly/>
+            <mat-error>Required Field</mat-error>
+          </mat-form-field>
+
+          <!--<mat-form-field>-->
+            <!--<input type="text" matInput-->
+                   <!--placeholder="Mobile Number" autocomplete="off"-->
+                   <!--formControlName="commonMobileNum"-->
+                   <!--autocomplete="off" required/>-->
+            <!--<mat-error>Required Field</mat-error>-->
+          <!--</mat-form-field>-->
+
+        </div>
+      </div>
+    </ng-container>
+<input type="hidden" formControlName="school_id" [(ngModel)]="school_id" />
+<input type="hidden" formControlName="driver_id" [(ngModel)]="driver_id" />
+    <mat-dialog-actions align="end" class="mat-dialog-actions">
+      <button mat-raised-button class="dangerThemeBtn">Submit</button>
+    </mat-dialog-actions>
+    </form>
+</mat-dialog-content>
+
+
+
