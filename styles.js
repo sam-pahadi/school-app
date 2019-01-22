@@ -703,11 +703,11 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Abhijit-Kar\Downloads\schoolapp\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
-__webpack_require__(/*! C:\Users\Abhijit-Kar\Downloads\schoolapp\src\styles.scss */"./src/styles.scss");
-__webpack_require__(/*! C:\Users\Abhijit-Kar\Downloads\schoolapp\node_modules\node-snackbar\dist\snackbar.min.css */"./node_modules/node-snackbar/dist/snackbar.min.css");
-__webpack_require__(/*! C:\Users\Abhijit-Kar\Downloads\schoolapp\node_modules\bootstrap\dist\css\bootstrap.css */"./node_modules/bootstrap/dist/css/bootstrap.css");
-module.exports = __webpack_require__(/*! C:\Users\Abhijit-Kar\Downloads\schoolapp\node_modules\alertifyjs\build\css\alertify.css */"./node_modules/alertifyjs/build/css/alertify.css");
+__webpack_require__(/*! F:\WEB DEVELOPMENT\WEBSITES\New folder\school-app\node_modules\@angular\material\prebuilt-themes\indigo-pink.css */"./node_modules/@angular/material/prebuilt-themes/indigo-pink.css");
+__webpack_require__(/*! F:\WEB DEVELOPMENT\WEBSITES\New folder\school-app\src\styles.scss */"./src/styles.scss");
+__webpack_require__(/*! F:\WEB DEVELOPMENT\WEBSITES\New folder\school-app\node_modules\node-snackbar\dist\snackbar.min.css */"./node_modules/node-snackbar/dist/snackbar.min.css");
+__webpack_require__(/*! F:\WEB DEVELOPMENT\WEBSITES\New folder\school-app\node_modules\bootstrap\dist\css\bootstrap.css */"./node_modules/bootstrap/dist/css/bootstrap.css");
+module.exports = __webpack_require__(/*! F:\WEB DEVELOPMENT\WEBSITES\New folder\school-app\node_modules\alertifyjs\build\css\alertify.css */"./node_modules/alertifyjs/build/css/alertify.css");
 
 
 /***/ })

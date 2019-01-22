@@ -100,7 +100,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid no-padding\">\n  <router-outlet></router-outlet>\n</div>\n\n"
+module.exports = "<div class=\"container-fluid no-padding\">\r\n  <router-outlet></router-outlet>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -247,7 +247,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "baseUrl", function() { return baseUrl; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "API", function() { return API; });
 // export const baseUrl = 'http://localhost:3000';
-var baseUrl = 'http://148.66.142.50:3000';
+var baseUrl = 'https://148.66.142.50:3000';
 var API = {
     login: {
         get: {},
@@ -759,7 +759,7 @@ var errMsg = {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"loginWrapper\">\n  <div class=\"login-page\">\n    <div class=\"form\">\n      <img src=\"assets/images/icons/logo.png\" alt=\"logo\" class=\"mb-2\" width=\"200px\">\n      <form [formGroup]=\"loginForm\"  (submit)=\"signIn(loginForm.value)\">\n        <div class=\"formFade\" *ngIf=\"index == 0\">\n          <mat-form-field class=\"example-full-width\">\n            <input type=\"text\" matInput placeholder=\"Username\" formControlName=\"email\" autocomplete=\"off\" required=\"\">\n          </mat-form-field>\n\n          <mat-form-field class=\"example-full-width\">\n            <input type=\"password\" matInput placeholder=\"Password\" formControlName=\"password\" autocomplete=\"off\" required=\"\">\n          </mat-form-field>\n          <button mat-raised-button class=\"btn-block dangerThemeBtn\" type=\"submit\" [disabled]=\"loginForm.status.toLowerCase()==='invalid'\">Sign In</button>\n          <a href=\"javascript:void(0);\" (click)=\"nextIndex(0)\" class=\"yellow-text-xs\">Forgot Password?</a>\n        </div>\n      </form>\n\n      <form novalidate *ngIf=\"index >= 1\" [formGroup]=\"myForm\" (submit)=\"forgotPassword(myForm.value)\">\n        <div class=\"formFade\" >\n          <h6 class=\"greyColor h6Font no-padding-both\">\n            Password reset link will be shared on your registered email id only\n          </h6>\n          <mat-form-field class=\"example-full-width\">\n            <input type=\"email\" matInput placeholder=\"Username\" formControlName=\"username\" autocomplete=\"off\" required=\"\"/>\n            <mat-error *ngIf=\"myForm.controls['username'].hasError('required')\">\n              Username is <strong>required</strong>\n            </mat-error>\n          </mat-form-field>\n\n          <div class=\"row\">\n            <div class=\"col-lg-6 col-md-6 col-sm-6 col-6 dashboardBox\">\n              <button type=\"submit\" class=\"btn-block mt-1 dangerThemeBtn\" mat-raised-button colors=\"primary\" [disabled]=\"myForm.status.toLowerCase()==='invalid'\">Submit</button>\n            </div>\n            <div class=\"col-lg-6 col-md-6 col-sm-6 col-6 dashboardBox\">\n              <button type=\"button\" class=\"btn-block mt-1 dangerHollowThemeBtn\" mat-raised-button colors=\"primary\" (click)=\"prevIndex(0)\">Cancel</button>\n            </div>\n          </div>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>\n\n"
+module.exports = "<div class=\"loginWrapper\">\r\n  <div class=\"login-page\">\r\n    <div class=\"form\">\r\n      <img src=\"assets/images/icons/logo.png\" alt=\"logo\" class=\"mb-2\" width=\"200px\">\r\n      <form [formGroup]=\"loginForm\"  (submit)=\"signIn(loginForm.value)\">\r\n        <div class=\"formFade\" *ngIf=\"index == 0\">\r\n          <mat-form-field class=\"example-full-width\">\r\n            <input type=\"text\" matInput placeholder=\"Username\" formControlName=\"email\" autocomplete=\"off\" required=\"\">\r\n          </mat-form-field>\r\n\r\n          <mat-form-field class=\"example-full-width\">\r\n            <input type=\"password\" matInput placeholder=\"Password\" formControlName=\"password\" autocomplete=\"off\" required=\"\">\r\n          </mat-form-field>\r\n          <button mat-raised-button class=\"btn-block dangerThemeBtn\" type=\"submit\" [disabled]=\"loginForm.status.toLowerCase()==='invalid'\">Sign In</button>\r\n          <a href=\"javascript:void(0);\" (click)=\"nextIndex(0)\" class=\"yellow-text-xs\">Forgot Password?</a>\r\n        </div>\r\n      </form>\r\n\r\n      <form novalidate *ngIf=\"index >= 1\" [formGroup]=\"myForm\" (submit)=\"forgotPassword(myForm.value)\">\r\n        <div class=\"formFade\" >\r\n          <h6 class=\"greyColor h6Font no-padding-both\">\r\n            Password reset link will be shared on your registered email id only\r\n          </h6>\r\n          <mat-form-field class=\"example-full-width\">\r\n            <input type=\"email\" matInput placeholder=\"Username\" formControlName=\"username\" autocomplete=\"off\" required=\"\"/>\r\n            <mat-error *ngIf=\"myForm.controls['username'].hasError('required')\">\r\n              Username is <strong>required</strong>\r\n            </mat-error>\r\n          </mat-form-field>\r\n\r\n          <div class=\"row\">\r\n            <div class=\"col-lg-6 col-md-6 col-sm-6 col-6 dashboardBox\">\r\n              <button type=\"submit\" class=\"btn-block mt-1 dangerThemeBtn\" mat-raised-button colors=\"primary\" [disabled]=\"myForm.status.toLowerCase()==='invalid'\">Submit</button>\r\n            </div>\r\n            <div class=\"col-lg-6 col-md-6 col-sm-6 col-6 dashboardBox\">\r\n              <button type=\"button\" class=\"btn-block mt-1 dangerHollowThemeBtn\" mat-raised-button colors=\"primary\" (click)=\"prevIndex(0)\">Cancel</button>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -988,7 +988,7 @@ var MaterialModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  width: 200px;\n}\n\n.mat-toolbar.mat-primary {\n  position: -webkit-sticky;\n  position: sticky;\n  top: 0;\n}\n"
+module.exports = ".sidenav-container {\r\n  height: 100%;\r\n}\r\n\r\n.sidenav {\r\n  width: 200px;\r\n}\r\n\r\n.mat-toolbar.mat-primary {\r\n  position: -webkit-sticky;\r\n  position: sticky;\r\n  top: 0;\r\n}\r\n"
 
 /***/ }),
 
@@ -999,7 +999,7 @@ module.exports = ".sidenav-container {\n  height: 100%;\n}\n\n.sidenav {\n  widt
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<mat-sidenav-container class=\"sidenav-container\">\n  <mat-sidenav\n    #drawer\n    class=\"sidenav\"\n    fixedInViewport=\"true\"\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\n    [opened]=\"!(isHandset$ | async)\">\n    <mat-toolbar color=\"primary\">Menu</mat-toolbar>\n    <mat-nav-list>\n      <a mat-list-item href=\"#\">Link 1</a>\n      <a mat-list-item href=\"#\">Link 2</a>\n      <a mat-list-item href=\"#\">Link 3</a>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content>\n    <mat-toolbar color=\"primary\">\n      <button\n        type=\"button\"\n        aria-label=\"Toggle sidenav\"\n        mat-icon-button\n        (click)=\"drawer.toggle()\"\n        *ngIf=\"isHandset$ | async\">\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\n      </button>\n      <span>schoolApp</span>\n    </mat-toolbar>\n    <!-- Add Content Here -->\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+module.exports = "<mat-sidenav-container class=\"sidenav-container\">\r\n  <mat-sidenav\r\n    #drawer\r\n    class=\"sidenav\"\r\n    fixedInViewport=\"true\"\r\n    [attr.role]=\"(isHandset$ | async) ? 'dialog' : 'navigation'\"\r\n    [mode]=\"(isHandset$ | async) ? 'over' : 'side'\"\r\n    [opened]=\"!(isHandset$ | async)\">\r\n    <mat-toolbar color=\"primary\">Menu</mat-toolbar>\r\n    <mat-nav-list>\r\n      <a mat-list-item href=\"#\">Link 1</a>\r\n      <a mat-list-item href=\"#\">Link 2</a>\r\n      <a mat-list-item href=\"#\">Link 3</a>\r\n    </mat-nav-list>\r\n  </mat-sidenav>\r\n  <mat-sidenav-content>\r\n    <mat-toolbar color=\"primary\">\r\n      <button\r\n        type=\"button\"\r\n        aria-label=\"Toggle sidenav\"\r\n        mat-icon-button\r\n        (click)=\"drawer.toggle()\"\r\n        *ngIf=\"isHandset$ | async\">\r\n        <mat-icon aria-label=\"Side nav toggle icon\">menu</mat-icon>\r\n      </button>\r\n      <span>schoolApp</span>\r\n    </mat-toolbar>\r\n    <!-- Add Content Here -->\r\n  </mat-sidenav-content>\r\n</mat-sidenav-container>\r\n"
 
 /***/ }),
 
@@ -1056,7 +1056,7 @@ var MyNavComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".grid-container {\n  margin: 20px;\n}\n\n.dashboard-card {\n  position: absolute;\n  top: 15px;\n  left: 15px;\n  right: 15px;\n  bottom: 15px;\n}\n\n.more-button {\n  position: absolute;\n  top: 5px;\n  right: 10px;\n}\n\n.dashboard-card-content {\n  text-align: center;\n}"
+module.exports = ".grid-container {\r\n  margin: 20px;\r\n}\r\n\r\n.dashboard-card {\r\n  position: absolute;\r\n  top: 15px;\r\n  left: 15px;\r\n  right: 15px;\r\n  bottom: 15px;\r\n}\r\n\r\n.more-button {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 10px;\r\n}\r\n\r\n.dashboard-card-content {\r\n  text-align: center;\r\n}"
 
 /***/ }),
 
@@ -1067,7 +1067,7 @@ module.exports = ".grid-container {\n  margin: 20px;\n}\n\n.dashboard-card {\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"grid-container\">\n  <h1 class=\"mat-h1\">Dashboard</h1>\n  <mat-grid-list cols=\"2\" rowHeight=\"350px\">\n    <mat-grid-tile *ngFor=\"let card of cards | async\" [colspan]=\"card.cols\" [rowspan]=\"card.rows\">\n      <mat-card class=\"dashboard-card\">\n        <mat-card-header>\n          <mat-card-title>\n            {{card.title}}\n            <button mat-icon-button class=\"more-button\" [matMenuTriggerFor]=\"menu\" aria-label=\"Toggle menu\">\n              <mat-icon>more_vert</mat-icon>\n            </button>\n            <mat-menu #menu=\"matMenu\" xPosition=\"before\">\n              <button mat-menu-item>Expand</button>\n              <button mat-menu-item>Remove</button>\n            </mat-menu>\n          </mat-card-title>\n        </mat-card-header>\n        <mat-card-content class=\"dashboard-card-content\">\n          <div>Card Content Here</div>\n        </mat-card-content>\n      </mat-card>\n    </mat-grid-tile>\n  </mat-grid-list>\n</div>"
+module.exports = "<div class=\"grid-container\">\r\n  <h1 class=\"mat-h1\">Dashboard</h1>\r\n  <mat-grid-list cols=\"2\" rowHeight=\"350px\">\r\n    <mat-grid-tile *ngFor=\"let card of cards | async\" [colspan]=\"card.cols\" [rowspan]=\"card.rows\">\r\n      <mat-card class=\"dashboard-card\">\r\n        <mat-card-header>\r\n          <mat-card-title>\r\n            {{card.title}}\r\n            <button mat-icon-button class=\"more-button\" [matMenuTriggerFor]=\"menu\" aria-label=\"Toggle menu\">\r\n              <mat-icon>more_vert</mat-icon>\r\n            </button>\r\n            <mat-menu #menu=\"matMenu\" xPosition=\"before\">\r\n              <button mat-menu-item>Expand</button>\r\n              <button mat-menu-item>Remove</button>\r\n            </mat-menu>\r\n          </mat-card-title>\r\n        </mat-card-header>\r\n        <mat-card-content class=\"dashboard-card-content\">\r\n          <div>Card Content Here</div>\r\n        </mat-card-content>\r\n      </mat-card>\r\n    </mat-grid-tile>\r\n  </mat-grid-list>\r\n</div>"
 
 /***/ }),
 
@@ -1151,7 +1151,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  notfound works!\n</p>\n"
+module.exports = "<p>\r\n  notfound works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1203,7 +1203,7 @@ var NotfoundComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"padding15\">\n\n  <div class=\"loginWrapper\">\n    <div class=\"login-page\">\n      <div class=\"form\">\n        <form [formGroup]=\"myForm\"  (submit)=\"openViewInquery(myForm.value)\">\n        <h5>Please Select The Board</h5>\n        <mat-radio-group class=\"example-radio-group\"  formControlName=\"board\">\n          <mat-radio-button class=\"example-radio-button\" *ngFor=\"let board of boards\" [value]=\"board\" >\n            {{board}}\n          </mat-radio-button>\n        </mat-radio-group>\n        <h5>Select The Required Academic Year</h5>\n        <mat-radio-group class=\"example-radio-group\" formControlName=\"academicSession\">\n          <mat-radio-button class=\"example-radio-button\" *ngFor=\"let academicyear of academicyears\"  [value]=\"academicyear\" >\n            {{academicyear}}\n          </mat-radio-button>\n        </mat-radio-group>\n        <button mat-raised-button class=\"dangerThemeBtn\">Submit</button>\n        </form>\n      </div>\n    </div>\n  </div>\n\n\n\n\n</div>\n"
+module.exports = "<div class=\"padding15\">\r\n\r\n  <div class=\"loginWrapper\">\r\n    <div class=\"login-page\">\r\n      <div class=\"form\">\r\n        <form [formGroup]=\"myForm\"  (submit)=\"openViewInquery(myForm.value)\">\r\n        <h5>Please Select The Board</h5>\r\n        <mat-radio-group class=\"example-radio-group\"  formControlName=\"board\">\r\n          <mat-radio-button class=\"example-radio-button\" *ngFor=\"let board of boards\" [value]=\"board\" >\r\n            {{board}}\r\n          </mat-radio-button>\r\n        </mat-radio-group>\r\n        <h5>Select The Required Academic Year</h5>\r\n        <mat-radio-group class=\"example-radio-group\" formControlName=\"academicSession\">\r\n          <mat-radio-button class=\"example-radio-button\" *ngFor=\"let academicyear of academicyears\"  [value]=\"academicyear\" >\r\n            {{academicyear}}\r\n          </mat-radio-button>\r\n        </mat-radio-group>\r\n        <button mat-raised-button class=\"dangerThemeBtn\">Submit</button>\r\n        </form>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1614,7 +1614,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"mat-elevation-z8\">\n  <table mat-table #table [dataSource]=\"dataSource\" matSort aria-label=\"Elements\">\n    <!-- Id Column -->\n    <ng-container matColumnDef=\"id\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>\n      <td mat-cell *matCellDef=\"let row\">{{row.id}}</td>\n    </ng-container>\n\n    <!-- Name Column -->\n    <ng-container matColumnDef=\"name\">\n      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>\n      <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\n    </ng-container>\n\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n  </table>\n\n  <mat-paginator #paginator\n    [length]=\"dataSource.data.length\"\n    [pageIndex]=\"0\"\n    [pageSize]=\"50\"\n    [pageSizeOptions]=\"[25, 50, 100, 250]\">\n  </mat-paginator>\n</div>"
+module.exports = "<div class=\"mat-elevation-z8\">\r\n  <table mat-table #table [dataSource]=\"dataSource\" matSort aria-label=\"Elements\">\r\n    <!-- Id Column -->\r\n    <ng-container matColumnDef=\"id\">\r\n      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>\r\n      <td mat-cell *matCellDef=\"let row\">{{row.id}}</td>\r\n    </ng-container>\r\n\r\n    <!-- Name Column -->\r\n    <ng-container matColumnDef=\"name\">\r\n      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>\r\n      <td mat-cell *matCellDef=\"let row\">{{row.name}}</td>\r\n    </ng-container>\r\n\r\n    <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n    <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n  </table>\r\n\r\n  <mat-paginator #paginator\r\n    [length]=\"dataSource.data.length\"\r\n    [pageIndex]=\"0\"\r\n    [pageSize]=\"50\"\r\n    [pageSizeOptions]=\"[25, 50, 100, 250]\">\r\n  </mat-paginator>\r\n</div>"
 
 /***/ }),
 
@@ -1930,7 +1930,7 @@ var HttpService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Abhijit-Kar\Downloads\schoolapp\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! F:\WEB DEVELOPMENT\WEBSITES\New folder\school-app\src\main.ts */"./src/main.ts");
 
 
 /***/ })
